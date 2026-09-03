@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1286446833546477');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אבא חי, אתגר 6 השבועות לגמילה מקנאביס לאבות לילדים קטנים</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #1c212b;
+    --bg-deep: #12151c;
+    --bg-alt: #20262f;
+    --ink: #f2efe9;
+    --ink-muted: #99a1b0;
+    --accent: #e8a13c;
+    --accent-dim: #b8813060;
+    --line: #333a47;
+    --font-display: 'Rubik', sans-serif;
+    --font-body: 'Assistant', sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 20px;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap{
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  section{ padding: 110px 0; position: relative; }
+  section.bg-alt{ background: var(--bg-deep); }
+
+  h1, h2, h3{
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.22;
+    margin: 0 0 24px;
+  }
+
+  p{ margin: 0 0 22px; }
+
+  .muted{ color: var(--ink-muted); }
+
+  /* Section beat-marker: a short bold accent rule above every section heading,
+     the one recurring signature element that ties every section together. */
+  .beat{
+    width: 44px;
+    height: 4px;
+    background: var(--accent);
+    border-radius: 2px;
+    margin: 0 0 26px;
+  }
+  .final-cta .beat, .price .beat, .hero .beat{ margin-inline: auto; }
+
+  /* Scroll-reveal: one calm entrance per section, not scattered per-element */
+  .reveal{
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 700ms ease, transform 700ms ease;
+  }
+  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 84px 0 96px;
+    text-align: center;
+    background:
+      radial-gradient(ellipse 65% 50% at 50% 0%, #2a3140 0%, transparent 72%),
+      var(--bg);
+  }
+
+  .hero-logo{
+    width: 148px;
+    height: 148px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 40px;
+    display: block;
+    opacity: 0;
+    animation: rise 900ms ease-out forwards;
+  }
+
+  .hero h1{
+    font-size: clamp(34px, 6vw, 52px);
+    max-width: 15ch;
+    margin-inline: auto;
+    opacity: 0;
+    animation: rise 900ms ease-out 120ms forwards;
+  }
+
+  .hero .accent-word{ color: var(--accent); }
+
+  .hero .sub{
+    font-size: 21px;
+    color: var(--ink-muted);
+    max-width: 44ch;
+    margin: 26px auto 44px;
+    opacity: 0;
+    animation: rise 900ms ease-out 240ms forwards;
+  }
+
+  .hero .sub strong{ color: var(--ink); font-weight: 600; }
+
+  @keyframes rise{
+    from{ opacity: 0; transform: translateY(16px); }
+    to{ opacity: 1; transform: translateY(0); }
+  }
+
+  .cta-btn{
+    display: inline-block;
+    background: var(--accent);
+    color: #1c1408;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 19px 38px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: transform 160ms ease, box-shadow 160ms ease;
+    box-shadow: 0 10px 28px -8px var(--accent-dim);
+  }
+  .cta-btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 32px -8px var(--accent-dim); }
+
+  .scarcity{
+    margin-top: 26px;
+    font-size: 15px;
+    color: var(--ink-muted);
+    letter-spacing: .2px;
+  }
+  .scarcity .dot{ color: var(--accent); }
+
+  /* ---------- Intro video ---------- */
+  .intro-video{
+    padding: 0 0 96px;
+    text-align: center;
+  }
+  .video-frame{
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    background: var(--bg-deep);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,.5);
+  }
+  .video-frame video,
+  .video-frame iframe{
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    object-fit: cover;
+  }
+
+  /* ---------- Problem ---------- */
+  .problem h2{ font-size: clamp(28px, 4vw, 34px); max-width: 16ch; }
+
+  .problem ul{
+    list-style: none;
+    margin: 36px 0 34px;
+    padding: 0;
+  }
+  .problem li{
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+    font-size: 20px;
+    line-height: 1.6;
+    color: #dcdad3;
+  }
+  .problem li:last-child{ border-bottom: 1px solid var(--line); }
+
+  .problem .closer{
+    color: var(--ink-muted);
+    font-size: 19px;
+  }
+
+  /* ---------- Story ---------- */
+  .story h2{ font-size: clamp(28px, 4vw, 34px); max-width: 18ch; }
+  .story p{ font-size: 20px; }
+
+  .story blockquote{
+    margin: 44px 0 0;
+    padding: 30px 28px;
+    background: var(--bg-deep);
+    border-inline-start: 4px solid var(--accent);
+    border-radius: 4px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  /* ---------- What it is ---------- */
+  .clarify-wrap h2{ font-size: clamp(26px, 4vw, 30px); }
+  .clarify{
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 34px 32px;
+    margin-top: 10px;
+  }
+  .clarify p{ margin: 0; color: #d7d4cc; font-size: 18px; line-height: 1.75; }
+  .clarify strong{ color: var(--ink); }
+
+  /* ---------- Program table ---------- */
+  .program h2{ font-size: clamp(28px, 4vw, 34px); }
+  .program table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 36px;
+    font-size: 17.5px;
+  }
+  .program th{
+    text-align: right;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--ink-muted);
+    font-size: 13px;
+    padding: 0 0 14px;
+    border-bottom: 1px solid var(--line);
+  }
+  .program td{
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .program .wk{
+    font-family: var(--font-display);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 19px;
+    width: 64px;
+    white-space: nowrap;
+  }
+
+  .value-stack{
+    margin-top: 56px;
+  }
+  .value-stack h3{ font-size: 22px; }
+  .value-stack .stack-list{
+    list-style: none;
+    margin: 28px 0 0;
+    padding: 0;
+  }
+  .value-stack .stack-item{
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 22px;
+  }
+  .value-stack .stack-item:last-child{ border-bottom: 1px solid var(--line); }
+  .value-stack .stack-item .item-name{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 7px;
+  }
+  .value-stack .stack-item .item-desc{
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink-muted);
+    max-width: 46ch;
+  }
+  .value-stack .stack-item .item-value{
+    flex-shrink: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .value-stack .total-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 26px 0 0;
+    margin-top: 6px;
+  }
+  .value-stack .total-row .total-label{
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .value-stack .total-row .total-amount{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 25px;
+    color: var(--ink);
+  }
+
+  /* ---------- Price ---------- */
+  .price h2{ font-size: clamp(28px, 4vw, 32px); }
+  .price p{ color: #d7d4cc; font-size: 19px; }
+
+  .price-figure{
+    margin: 44px 0;
+    padding: 38px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+  }
+  .price-figure .amount{
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 68px;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .price-figure .caption{
+    margin-top: 12px;
+    color: var(--ink-muted);
+    font-size: 16px;
+  }
+
+  /* ---------- Final CTA / form ---------- */
+  .final-cta{ text-align: center; }
+  .final-cta h2{ font-size: clamp(28px, 4vw, 34px); }
+
+  form.lead{
+    max-width: 440px;
+    margin: 40px auto 0;
+    text-align: right;
+  }
+  form.lead label{
+    display: block;
+    font-size: 15px;
+    color: var(--ink-muted);
+    margin: 0 0 7px;
+  }
+  form.lead input{
+    width: 100%;
+    background: var(--bg-deep);
+    border: 1px solid var(--line);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 17px;
+    padding: 15px 16px;
+    border-radius: 8px;
+    margin-bottom: 18px;
+  }
+  form.lead input:focus{
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+  form.lead .cta-btn{ width: 100%; }
+
+  form.lead .consent{
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.5;
+    margin: 0 0 20px;
+    cursor: pointer;
+  }
+  form.lead .consent input[type="checkbox"]{
+    width: auto;
+    margin: 3px 0 0;
+    flex-shrink: 0;
+    accent-color: var(--accent);
+  }
+  form.lead .consent a{
+    color: var(--accent);
+    text-decoration: underline;
+  }
+
+  .privacy-note{
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-top: -12px;
+    margin-bottom: 8px;
+  }
+
+  .form-note{
+    text-align: center;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 16px;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding: 48px 0 68px;
+    text-align: center;
+  }
+  footer p{
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* ---------- Sticky CTA bar ---------- */
+  .sticky-cta{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-deep);
+    border-top: 1px solid var(--line);
+    padding: 14px 20px;
+    box-sizing: border-box;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    transform: translateY(100%);
+    transition: transform 300ms ease;
+  }
+  .sticky-cta.is-visible{ transform: translateY(0); }
+  .sticky-cta .price-tag{
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  .sticky-cta .cta-btn{
+    padding: 12px 26px;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+  @media (max-width: 380px){
+    .sticky-cta .price-tag{ display: none; }
+  }
+
+  @media (max-width: 480px){
+    section{ padding: 76px 0; }
+    body{ font-size: 18px; }
+    .problem li{ font-size: 18px; }
+    .story p{ font-size: 18px; }
+  }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <img class="hero-logo" src="data:image/jpeg;base64,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" alt="אבא חי">
+      <h1>אתגר 6 השבועות לגמילה מקנאביס לאבות לילדים קטנים</h1>
+      <p class="sub">כשאתה מעשן וויד, יש פילטר בינך לבין המציאות, אתה שם, אבל לא באמת שם עם הילדים הקטנים שלך. <strong>השיטה הדופאמינית</strong> שפיתחתי בעצמי אחרי 20 שנה של עישון יומיומי מורידה את המסך הזה, בלי תהליך טיפולי ארוך, ובקצב שמתאים לאבא עסוק.</p>
+      <a href="#form" class="cta-btn">אני רוצה פרטים על הפיילוט</a>
+      <p class="scarcity"><span class="dot">●</span> 1,000 ₪ · 10 מקומות בלבד במחיר פיילוט, המחיר עולה במחזור הבא</p>
+    </div>
+  </section>
+
+  <section class="intro-video reveal">
+    <div class="wrap">
+      <div class="video-frame">
+        <iframe src="https://www.youtube.com/embed/_6IBpACopZ0"
+                title="אבא חי" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="problem bg-alt reveal">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>מכיר את הרגעים האלה?</h2>
+      <ul>
+        <li>מסיים לעשן וויד במרפסת, נכנס הביתה, וישר רץ לשטוף ידיים ולצחצח שיניים, רק שהילד לא יגיד "אבא, אתה מסריח".</li>
+        <li>בת הזוג מבקשת שתתקלח לפני שאתה נכנס למיטה, או לפני שאתה מרים את הניובורן.</li>
+        <li>אתה על השטיח עם הילדים, פיזית שם, אבל הראש שלך מעורפל, במקום אחר.</li>
+        <li>מתכנן את הערב סביב הרגע שהילדים ילכו לישון, כדי "סוף סוף" לצאת למרפסת ולעשן.</li>
+      </ul>
+      <p class="closer">אם משהו מזה מוכר לך, אתה לא לבד, ואתה בהחלט לא הראשון. זו בדיוק הסיבה שבניתי את התוכנית הזו.</p>
+    </div>
+  </section>
+
+  <section class="story reveal">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>ניסיתי המון פעמים. לרוב זה החזיק שבוע.</h2>
+      <p>אולי שבועיים, ואז חזרתי. למה? כי לא הייתה לי תוכנית מדויקת. הייתה לי רק החלטה.</p>
+      <p>אחרי 20 שנה של עישון יומיומי, הבנתי שהחלטה לא מספיקה. אז בניתי תוכנית. לא רק "אני מפסיק", אלא מה בדיוק אני עושה בכל רגע קריטי: מה עושים כשעולה הדחף בערב, מה עושים כשקמים עם סיוטים באמצע הלילה, מה עושים עם כאבי השרירים, עם העצבנות, עם המצבים החברתיים.</p>
+      <p>בתוכנית שבניתי לעצמי היו כלים קונקרטיים לכל רגע כזה, כולל סיגריות פלסטיק בטעם מנטה ומסטיקים לרגעי הדחף הפיזי, ריצות ומתיחות לפריקת המתח בגוף, התרחקות מכוונת מסיטואציות מסוימות לאורך התוכנית, ודיבור חופשי למצלמה כשהדחף הרגשי עלה, לפרוק הכל, בלי פילטרים, בלי שאף אחד רואה.</p>
+      <blockquote>לא הייתי צריך לאלתר ב-2 בלילה. אני נקי כבר יותר משלוש שנים, לא שבוע, לא חודש. וידעתי שיום אחד, אולי הילדים שלי יראו איך אבא שלהם נלחם, ויהיו גאים בו.</blockquote>
+      <div style="text-align:center; margin-top: 40px;">
+        <a href="#form" class="cta-btn">אני רוצה פרטים על הפיילוט</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="clarify-wrap bg-alt reveal">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>מה זה בדיוק, ומה זה לא</h2>
+      <div class="clarify">
+        <p><strong>זו תוכנית ליווי קבוצתית לגמילה מקנאביס, ספציפית לאבות לילדים קטנים.</strong> לא לנוער, לא לנשים, לא לגמילה כללית "לכולם" — מבוססת על השיטה הדופאמינית, ובנויה סביב הקושי הספציפי של אבא שצריך להיות נוכח, ער וזמין לילד קטן. הדחף לעשן הוא בקשה של המוח לדופאמין; במקום להילחם בו, התוכנית מזינה אותו נכון דרך כלים קונקרטיים. התוכנית הזו ממוקדת בגמילה מההרגל עצמו, זה תחום ההתמחות שלה. אם עולים אצלך גם נושאים עמוקים יותר, כמו חרדה, לחץ, או קושי רגשי מתמשך, מומלץ לטפל בהם במקביל אצל איש מקצוע שמתמחה בזה, בדיוק כמו שרופא עור לא מטפל בלב. חלק מתהליך ההרשמה כולל שיחת התאמה קצרה כדי לוודא שזה מתאים לך.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="program reveal">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>6 שבועות, שלב אחרי שלב</h2>
+      <table>
+        <tr><th>שבוע</th><th>פוקוס</th></tr>
+        <tr><td class="wk">01</td><td>ה"למה" שלך, הכנת סביבה, הגדרת מטרות אישיות, ותוכנית לרגעי דחף</td></tr>
+        <tr><td class="wk">02</td><td>התמודדות עם שינה ועצבנות בשבועות הראשונים</td></tr>
+        <tr><td class="wk">03</td><td>דוקותרפיה, דיבור חופשי למצלמה במקום עישון</td></tr>
+        <tr><td class="wk">04</td><td>חזרת הבהירות המנטלית ונוכחות עם הילדים</td></tr>
+        <tr><td class="wk">05</td><td>ניהול לחץ אבהי בלי חומרים</td></tr>
+        <tr><td class="wk">06</td><td>סיכום, "הסרט החדש שלי", ותוכנית להמשך</td></tr>
+      </table>
+
+      <div class="value-stack">
+        <h3>מה בדיוק אתה מקבל</h3>
+        <ul class="stack-list">
+          <li class="stack-item">
+            <div>
+              <div class="item-name">שיחת היכרות אישית לפני שמתחילים</div>
+              <div class="item-desc">שיחה אישית איתי, לא טופס גנרי — ממפים ביחד את הטריגרים הספציפיים שלך, לא של "אבא ממוצע".</div>
+            </div>
+            <div class="item-value">שווי 350 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">ליווי יומי צמוד, 6 שבועות ברצף</div>
+              <div class="item-desc">42 מסרים אישיים, לא סרטון גנרי אחד ששולחים לכולם. מלווה אותך יום-יום עד סוף התוכנית.</div>
+            </div>
+            <div class="item-value">שווי 900 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">מפת התרחישים המלאה</div>
+              <div class="item-desc">תגובה מוכנה מראש לכל רגע קשה: דחף בערב, סיוטים, כאבי שרירים, עצבנות מול הילדים, לחץ חברתי. כלי שנשאר איתך גם אחרי שהתוכנית נגמרת.</div>
+            </div>
+            <div class="item-value">שווי 450 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">שיטת הדוקותרפיה</div>
+              <div class="item-desc">הכלי המרכזי שעבד לי בעצמי אחרי 20 שנה. לא תרגיל מספר X מתוך רשימה — הדבר היחיד שבאמת שינה לי את המשחק.</div>
+            </div>
+            <div class="item-value">ללא תמחור</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">גישה ישירה אליי בוואטסאפ</div>
+              <div class="item-desc">לרגעי משבר או דחף חזק במהלך התוכנית. לא מוקד שירות, לא בוט. אני, אישית.</div>
+            </div>
+            <div class="item-value">שווי 400 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">6 מפגשי זום קבוצתיים איתי</div>
+              <div class="item-desc">חי, אישי, לא הקלטה. שאלות, תמיכה, ותיקוני כיוון תוך כדי התוכנית.</div>
+            </div>
+            <div class="item-value">שווי 700 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">קהילת אבות סגורה</div>
+              <div class="item-desc">מקום לפרוק עם גברים שמבינים בדיוק את מה שאתה עובר. קבוצת וואטסאפ בהזמנה בלבד, לא ציבורית ולא מפורסמת בשום מקום — אבל חשוב שתדע: בתוך קבוצת וואטסאפ, חברי הקבוצה רואים את שמות ומספרי הטלפון של אחד השני.</div>
+            </div>
+            <div class="item-value">שווי 300 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">מדריך שינה ואנרגיה טבעית</div>
+              <div class="item-desc">כלים קונקרטיים לשבועות הראשונים, כשהשינה משתבשת ואתה עדיין צריך לתפקד בעבודה ובבית.</div>
+            </div>
+            <div class="item-value">שווי 150 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">מדריך תקשורת זוגית לתקופת השינויים</div>
+              <div class="item-desc">איך מדברים עם בת הזוג על מה שקורה, בלי שהעצבנות של הגמילה תישפך על הזוגיות.</div>
+            </div>
+            <div class="item-value">שווי 150 ₪</div>
+          </li>
+          <li class="stack-item">
+            <div>
+              <div class="item-name">גישה לכל החיים להקלטות ולחומרים</div>
+              <div class="item-desc">כל וידאו, כל מפגש, כל מדריך — נשארים אצלך גם אחרי שהאתגר נגמר, לחזור אליהם מתי שתרצה.</div>
+            </div>
+            <div class="item-value">שווי 250 ₪</div>
+          </li>
+        </ul>
+
+        <div class="total-row">
+          <div class="total-label">שווי כולל</div>
+          <div class="total-amount">3,650 ₪ ומעלה</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="price bg-alt reveal">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>בוא נדבר תכלס על כסף</h2>
+      <p>שקית וויד ממוצעת, ניירות, טבק והמנצ'יז של הלילה עולים לאבא ממוצע בין 800 ל-1,500 ₪ בחודש. ב-6 שבועות, אתה אשכרה שורף באוויר לפחות 1,500 ₪.</p>
+      <p>זה אומר שהתוכנית הזו לא באמת עולה לך כסף, היא מחזירה את ההשקעה של עצמה כבר בשבועות הראשונים. מהרגע שאתה מפסיק להסתתר במרפסת, הכסף נשאר בכיס שלך, לטובת הילדים והמשפחה שלך.</p>
+      <p>ומעבר לזה, אתה כבר ראית למעלה מה בדיוק נכנס לפיילוט הזה, שווי של מעל 3,650 ₪. השאלה האמיתית היא לא אם 1,000 ₪ שווים את זה.</p>
+
+      <div class="price-figure">
+        <div class="amount">1,000 ₪</div>
+        <div class="caption">השקעה חד-פעמית · מוגבל ל-10 אבות בפיילוט הראשון</div>
+      </div>
+      <p class="muted" style="text-align:center; font-size: 14px; margin-top: -18px;">זה מחיר פיילוט בלבד. במחזורים הבאים המחיר יעלה, ומי שנרשם עכשיו מקבל את המחיר הכי נמוך שהתוכנית הזו תיתן אי פעם.</p>
+    </div>
+  </section>
+
+  <section class="final-cta reveal" id="form">
+    <div class="wrap">
+      <div class="beat"></div>
+      <h2>רוצה להיות אחד מ-10 האבות בפיילוט?</h2>
+      <p class="muted">השאר פרטים לשיחת התאמה קצרה, ללא התחייבות. נדבר על המצב שלך ונבדוק אם זה מתאים.</p>
+
+      <form class="lead" id="lead-form" method="POST">
+        <input type="hidden" name="access_key" value="9fa3fe0f-5656-4baf-a54e-8a18757fac4d">
+        <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
+
+        <label for="name">שם מלא</label>
+        <input id="name" name="name" type="text" required autocomplete="name">
+
+        <label for="phone">טלפון</label>
+        <input id="phone" name="phone" type="tel" required autocomplete="tel">
+
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          אני מאשר/ת את <a href="terms.html" target="_blank" rel="noopener">תקנון האתר</a> ואת <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a>
+        </label>
+
+        <button type="submit" class="cta-btn">אני רוצה פרטים</button>
+      </form>
+      <p class="privacy-note">הפרטים שלך נשארים איתי בלבד. לא משותפים עם אף אחד, לא נמכרים לאף גורם.</p>
+      <p id="thanks" style="display:none; color: var(--accent); font-family: var(--font-display); font-weight: 600;">קיבלתי! אחזור אליך בהקדם.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p>אבא חי · תוכנית ממוקדת לגמילה מקנאביס · לא מחליפה טיפול כללי בבריאות הנפש</p>
+      <p style="margin-top: 10px;"><a href="terms.html" style="color: var(--ink-muted);">תקנון האתר</a> · <a href="privacy.html" style="color: var(--ink-muted);">מדיניות פרטיות</a></p>
+    </div>
+  </footer>
+
+  <div class="sticky-cta" id="sticky-cta">
+    <span class="price-tag">1,000 ₪ · 10 מקומות</span>
+    <a href="#form" class="cta-btn">אני רוצה פרטים</a>
+  </div>
+
+  <script>
+    var leadForm = document.getElementById('lead-form');
+    leadForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = leadForm.querySelector('button');
+      btn.disabled = true;
+      btn.textContent = 'שולח...';
+      var formData = new FormData(leadForm);
+      var payload = Object.fromEntries(formData.entries());
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
+      }).then(function(res){ return res.json(); }).then(function(data){
+        if (data.success) {
+          leadForm.style.display = 'none';
+          document.getElementById('thanks').style.display = 'block';
+          if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+        } else {
+          throw new Error(data.message || 'submit failed');
+        }
+      }).catch(function(){
+        btn.disabled = false;
+        btn.textContent = 'אני רוצה פרטים';
+        alert('משהו השתבש, נסה שוב.');
+      });
+    });
+
+    document.querySelectorAll('a[href="#form"]').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var target = document.getElementById('form');
+        if (target) {
+          target.classList.add('is-visible'); // make sure it's not stuck hidden if reveal hasn't fired yet
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    var stickyBar = document.getElementById('sticky-cta');
+    var heroEl = document.querySelector('.hero');
+    var formEl = document.getElementById('form');
+    if (stickyBar && heroEl && formEl) {
+      var heroObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (!entry.isIntersecting) {
+            stickyBar.classList.add('is-visible');
+          } else {
+            stickyBar.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0 });
+      heroObserver.observe(heroEl);
+
+      var formObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (entry.isIntersecting) {
+            stickyBar.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0.3 });
+      formObserver.observe(formEl);
+    }
+
+    var revealEls = document.querySelectorAll('.reveal');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function(el){ io.observe(el); });
+  </script>
+
+</body>
+</html>

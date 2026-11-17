@@ -23,675 +23,455 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
 <title>אבא חי · גמילה מקנאביס לאבות ב-30 יום · מחזור ראשון 4.1.2027</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;800&family=Assistant:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@400;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+  /* Concept: the page is one night. It opens on the balcony at night and
+     ends in the morning, with the kids. Scrolling is the 30 days. */
   :root{
-    --bg: #1c212b;
-    --bg-deep: #12151c;
-    --bg-alt: #20262f;
-    --ink: #f2efe9;
-    --ink-muted: #99a1b0;
-    --accent: #e8a13c;
-    --accent-dim: #b8813060;
-    --line: #333a47;
-    --font-display: 'Rubik', sans-serif;
-    --font-body: 'Assistant', sans-serif;
+    --night-1:#0f1729;
+    --night-2:#16213a;
+    --night-3:#222c4c;
+    --dusk:#4b4a78;
+    --sun:#f3a35c;
+    --dawn:#f4d7c1;
+    --day:#eef2ef;
+    --day-2:#f7f9f8;
+    --lamp:#ffc35a;
+    --ink-night:#eae6dc;
+    --ink-night-2:#a9b0c4;
+    --ink-day:#1a2233;
+    --ink-day-2:#4f5869;
+    --rule-night:#2f3a5a;
+    --rule-day:#cfd6d2;
+    --display:'Karantina', 'Frank Ruhl Libre', serif;
+    --body:'Frank Ruhl Libre', Georgia, serif;
   }
-
-  *{ box-sizing: border-box; }
-
-  html{ scroll-behavior: smooth; }
-
+  *{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior:auto; } }
   body{
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 20px;
-    line-height: 1.8;
-    -webkit-font-smoothing: antialiased;
+    margin:0;
+    font-family:var(--body);
+    font-size:19px;
+    line-height:1.85;
+    color:var(--ink-night);
+    background:var(--night-1);
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{ max-width:640px; margin:0 auto; padding:0 24px; }
+  h1,h2,h3{ font-family:var(--display); font-weight:700; margin:0; line-height:.95; letter-spacing:.2px; }
+  h2{ font-size:clamp(46px, 9vw, 68px); margin-bottom:28px; }
+  p{ margin:0 0 20px; }
+  .num{ font-family:var(--body); font-weight:700; font-size:.8em; }
+  a{ color:inherit; }
+  :focus-visible{ outline:3px solid var(--lamp); outline-offset:3px; }
+
+  section{ padding:96px 0; scroll-margin-top:64px; }
+  .night{ color:var(--ink-night); }
+  .day{ color:var(--ink-day); }
+
+  .btn{
+    display:inline-block;
+    font-family:var(--body);
+    font-weight:700;
+    font-size:18px;
+    text-decoration:none;
+    background:var(--lamp);
+    color:#1b1405;
+    padding:16px 30px;
+    border-radius:4px;
+    border:none;
+    cursor:pointer;
+  }
+  .btn:hover{ background:#ffd27e; }
+  .day .btn, .site-header .btn{ background:#f0a63c; color:#1b1405; }
+  .day .btn:hover, .site-header .btn:hover{ background:#f6b85c; }
+
+
+  /* ---------- Site header ---------- */
+  .site-header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(247,249,248,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule-day);
+    color:var(--ink-day);
+  }
+  .site-header .bar{
+    max-width:1120px; margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:24px;
+  }
+  .logo{ display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo img{ width:40px; height:40px; border-radius:50%; object-fit:cover; }
+  .logo span{ font-family:var(--display); font-size:30px; line-height:1; }
+  .site-nav{ display:flex; align-items:center; gap:28px; }
+  .site-nav a{ text-decoration:none; font-size:17px; color:var(--ink-day-2); }
+  .site-nav a:hover{ color:var(--ink-day); }
+  .site-nav .btn{ padding:10px 20px; font-size:16px; }
+  .menu-toggle{
+    display:none; background:none; border:1px solid var(--rule-day); color:var(--ink-day);
+    font-family:var(--body); font-size:16px; padding:6px 14px; border-radius:4px; cursor:pointer;
+  }
+  @media (max-width:899px){
+    .menu-toggle{ display:block; }
+    .site-nav{
+      display:none; position:absolute; top:100%; right:0; left:0;
+      flex-direction:column; align-items:stretch; gap:0;
+      background:var(--day-2); border-bottom:1px solid var(--rule-day); padding:8px 24px 20px;
+    }
+    .site-nav.open{ display:flex; }
+    .site-nav a{ padding:12px 0; border-bottom:1px solid var(--rule-day); font-size:19px; color:var(--ink-day); }
+    .site-nav .btn{ margin-top:16px; text-align:center; border-bottom:none; }
   }
 
-  .wrap{
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0 28px;
+  /* ---------- Home hero ---------- */
+  .hero{ min-height:calc(100vh - 65px); display:flex; align-items:center; }
+  .hero .wrap{ max-width:1120px; width:100%; }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap:14px; align-items:center; }
+  .btn-ghost{
+    display:inline-block; text-decoration:none; font-weight:700; font-size:18px;
+    padding:14px 26px; border:2px solid #f0a63c; border-radius:4px; color:var(--ink-day);
+  }
+  .btn-ghost:hover{ background:#fdf0dc; }
+  .hero-facts{
+    display:grid; grid-template-columns:repeat(3, auto); justify-content:start; gap:34px;
+    margin-top:44px; padding-top:22px; border-top:1px solid var(--rule-day);
+  }
+  .hero-facts div{ font-size:15px; color:var(--ink-day-2); line-height:1.4; }
+  .hero-facts strong{ display:block; font-family:var(--body); font-size:24px; color:#c97a12; }
+  @media (max-width:480px){
+    .hero-facts{ gap:20px; }
+    .hero-facts strong{ font-size:20px; }
   }
 
-  section{ padding: 110px 0; position: relative; }
-  section.bg-alt{ background: var(--bg-deep); }
-
-  h1, h2, h3{
-    font-family: var(--font-display);
-    font-weight: 700;
-    line-height: 1.22;
-    margin: 0 0 24px;
-  }
-
-  p{ margin: 0 0 22px; }
-
-  .muted{ color: var(--ink-muted); }
-
-  /* Section beat-marker: a short bold accent rule above every section heading,
-     the one recurring signature element that ties every section together. */
-  .beat{
-    width: 44px;
-    height: 4px;
-    background: var(--accent);
-    border-radius: 2px;
-    margin: 0 0 26px;
-  }
-  .final-cta .beat, .price .beat, .hero .beat{ margin-inline: auto; }
-
-  /* Scroll-reveal: one calm entrance per section, not scattered per-element */
-  .reveal{
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 700ms ease, transform 700ms ease;
-  }
-  .reveal.is-visible{ opacity: 1; transform: translateY(0); }
-
-  /* ---------- Hero ---------- */
+  /* ---------- Hero: the balcony ---------- */
   .hero{
-    padding: 84px 0 96px;
-    text-align: center;
-    background:
-      radial-gradient(ellipse 65% 50% at 50% 0%, #2a3140 0%, transparent 72%),
-      var(--bg);
+    background:linear-gradient(160deg, #fbe9d9 0%, var(--day-2) 45%, var(--day) 100%);
+    padding:64px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  /* the balcony lamp: a single warm light source in the corner */
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:-180px; left:-160px;
+    width:520px; height:520px;
+    background:radial-gradient(circle, rgba(243,163,92,.35) 0%, rgba(243,163,92,0) 65%);
+    pointer-events:none;
+  }
+  .brand{ display:flex; align-items:center; gap:12px; margin-bottom:56px; }
+  .brand img{ width:46px; height:46px; border-radius:50%; object-fit:cover; }
+  .brand span{ font-family:var(--display); font-size:30px; }
+  .hero-grid{ display:grid; grid-template-columns:1fr; gap:48px; align-items:center; }
+  .hero h1{ font-size:clamp(64px, 12vw, 112px); }
+  .hero .lede{ font-size:21px; color:var(--ink-day-2); margin:28px 0 34px; max-width:30ch; }
+  .hero .facts{ color:var(--ink-night-2); font-size:16px; margin:22px 0 0; }
+
+  /* the recording: his phone on the balcony rail */
+  .rec{
+    position:relative;
+    width:100%;
+    max-width:300px;
+    aspect-ratio:9/16;
+    margin:0 auto;
+    border-radius:26px;
+    border:8px solid #2a2f3b;
+    background:#2a2f3b;
+    overflow:hidden;
+    box-shadow:0 30px 60px -25px rgba(0,0,0,.8);
+  }
+  .rec iframe{ width:100%; height:100%; border:0; display:block; }
+  .rec .tag{
+    position:absolute; top:12px; right:12px;
+    display:flex; align-items:center; gap:7px;
+    font-family:var(--body); font-size:13px; color:#fff;
+    background:rgba(0,0,0,.45); padding:3px 10px; border-radius:20px;
+    pointer-events:none;
+  }
+  .rec .dot{ width:9px; height:9px; border-radius:50%; background:#ff4b3e; animation:blink 1.6s steps(2) infinite; }
+  @keyframes blink{ 50%{ opacity:.15; } }
+  @media (prefers-reduced-motion: reduce){ .rec .dot{ animation:none; } }
+
+  @media (min-width:900px){
+    .hero-grid{ grid-template-columns:1.25fr .75fr; gap:72px; }
   }
 
-  .hero-logo{
-    width: 148px;
-    height: 148px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin: 0 auto 40px;
-    display: block;
-    opacity: 0;
-    animation: rise 900ms ease-out forwards;
+  /* ---------- An ordinary evening (timestamped) ---------- */
+  .evening{ background:linear-gradient(var(--night-1), var(--night-2)); border-top:10px solid var(--dusk); }
+  .evening ol{ list-style:none; margin:10px 0 0; padding:0; }
+  .evening li{
+    display:grid;
+    grid-template-columns:64px 1fr;
+    gap:18px;
+    padding:22px 0;
+    border-top:1px solid var(--rule-night);
   }
-
-  .hero h1{
-    font-size: clamp(34px, 6vw, 52px);
-    max-width: 15ch;
-    margin-inline: auto;
-    opacity: 0;
-    animation: rise 900ms ease-out 120ms forwards;
+  .evening li:last-child{ border-bottom:1px solid var(--rule-night); }
+  .evening time{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:22px;
+    line-height:1.2;
+    color:var(--lamp);
+    direction:ltr;
+    text-align:right;
   }
-
-  .hero .accent-word{ color: var(--accent); }
-
-  .hero .sub{
-    font-size: 21px;
-    color: var(--ink-muted);
-    max-width: 44ch;
-    margin: 26px auto 44px;
-    opacity: 0;
-    animation: rise 900ms ease-out 240ms forwards;
-  }
-
-  .hero .sub strong{ color: var(--ink); font-weight: 600; }
-
-  @keyframes rise{
-    from{ opacity: 0; transform: translateY(16px); }
-    to{ opacity: 1; transform: translateY(0); }
-  }
-
-  .cta-btn{
-    display: inline-block;
-    background: var(--accent);
-    color: #1c1408;
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 18px;
-    text-decoration: none;
-    padding: 19px 38px;
-    border-radius: 8px;
-    border: none;
-    cursor: pointer;
-    transition: transform 160ms ease, box-shadow 160ms ease;
-    box-shadow: 0 10px 28px -8px var(--accent-dim);
-  }
-  .cta-btn:hover{ transform: translateY(-2px); box-shadow: 0 14px 32px -8px var(--accent-dim); }
-
-  .scarcity{
-    margin-top: 26px;
-    font-size: 15px;
-    color: var(--ink-muted);
-    letter-spacing: .2px;
-  }
-  .scarcity .dot{ color: var(--accent); }
-
-  /* ---------- Intro video ---------- */
-  .intro-video{
-    padding: 0 0 96px;
-    text-align: center;
-  }
-  .video-frame{
-    width: 100%;
-    max-width: 400px;
-    aspect-ratio: 9 / 16;
-    margin: 0 auto;
-    background: var(--bg-deep);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    box-shadow: 0 20px 50px -20px rgba(0,0,0,.5);
-  }
-  .video-frame video,
-  .video-frame iframe{
-    width: 100%;
-    height: 100%;
-    display: block;
-    border: none;
-    object-fit: cover;
-  }
-
-  /* ---------- Problem ---------- */
-  .problem h2{ font-size: clamp(28px, 4vw, 34px); max-width: 16ch; }
-
-  .problem ul{
-    list-style: none;
-    margin: 36px 0 34px;
-    padding: 0;
-  }
-  .problem li{
-    padding: 26px 0;
-    border-top: 1px solid var(--line);
-    font-size: 20px;
-    line-height: 1.6;
-    color: #dcdad3;
-  }
-  .problem li:last-child{ border-bottom: 1px solid var(--line); }
-
-  .problem .closer{
-    color: var(--ink-muted);
-    font-size: 19px;
-  }
+  .evening .closer{ margin-top:34px; color:var(--ink-night-2); }
 
   /* ---------- Story ---------- */
-  .story h2{ font-size: clamp(28px, 4vw, 34px); max-width: 18ch; }
-  .story p{ font-size: 20px; }
-
+  .story{ background:linear-gradient(var(--night-2), var(--night-3)); }
   .story blockquote{
-    margin: 44px 0 0;
-    padding: 30px 28px;
-    background: var(--bg-deep);
-    border-inline-start: 4px solid var(--accent);
-    border-radius: 4px;
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 1.5;
-    color: var(--ink);
+    margin:40px 0 0;
+    padding:0 22px 0 0;
+    border-right:3px solid var(--lamp);
+    font-size:24px;
+    line-height:1.6;
   }
 
-  /* ---------- What it is ---------- */
-  .clarify-wrap h2{ font-size: clamp(26px, 4vw, 30px); }
-  .clarify{
-    background: var(--bg);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 34px 32px;
-    margin-top: 10px;
-  }
-  .clarify p{ margin: 0; color: #d7d4cc; font-size: 18px; line-height: 1.75; }
-  .clarify strong{ color: var(--ink); }
+  /* ---------- The turning point: free challenge ---------- */
+  .challenge{ background:linear-gradient(var(--night-3), var(--dusk)); padding-bottom:110px; }
+  .challenge h2{ font-size:clamp(54px, 11vw, 84px); }
+  .challenge .sub{ font-size:22px; color:var(--lamp); margin:-8px 0 26px; }
+  .challenge ol{ margin:26px 0 34px; padding:0 22px 0 0; }
+  .challenge ol li{ margin-bottom:10px; }
 
-  /* ---------- Program table ---------- */
-  .program h2{ font-size: clamp(28px, 4vw, 34px); }
-  .program table{
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 36px;
-    font-size: 17.5px;
-  }
-  .program th{
-    text-align: right;
-    font-family: var(--font-display);
-    font-weight: 500;
-    color: var(--ink-muted);
-    font-size: 13px;
-    padding: 0 0 14px;
-    border-bottom: 1px solid var(--line);
-  }
-  .program td{
-    padding: 20px 0;
-    border-bottom: 1px solid var(--line);
-    vertical-align: top;
-    line-height: 1.6;
-  }
-  .program .wk{
-    font-family: var(--font-display);
-    color: var(--accent);
-    font-weight: 700;
-    font-size: 19px;
-    width: 64px;
-    white-space: nowrap;
+  /* the horizon: night ends here */
+  .horizon{
+    height:10px;
+    background:linear-gradient(90deg, var(--dusk), var(--sun) 50%, var(--dusk));
   }
 
-  .value-stack{
-    margin-top: 56px;
+  /* ---------- 30 days: dated timeline ---------- */
+  .program{ background:linear-gradient(var(--dawn), var(--day)); }
+  .program ol{ list-style:none; margin:10px 0 0; padding:0; position:relative; }
+  .program ol::before{
+    content:""; position:absolute; top:12px; bottom:12px; right:7px;
+    width:2px; background:var(--sun);
   }
-  .value-stack h3{ font-size: 22px; }
-  .value-stack .stack-list{
-    list-style: none;
-    margin: 28px 0 0;
-    padding: 0;
+  .program li{ position:relative; padding:0 40px 30px 0; }
+  .program li::before{
+    content:""; position:absolute; right:0; top:10px;
+    width:16px; height:16px; border-radius:50%;
+    background:var(--day); border:3px solid var(--sun);
   }
-  .value-stack .stack-item{
-    padding: 24px 0;
-    border-top: 1px solid var(--line);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 22px;
-  }
-  .value-stack .stack-item:last-child{ border-bottom: 1px solid var(--line); }
-  .value-stack .stack-item .item-name{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--ink);
-    margin-bottom: 7px;
-  }
-  .value-stack .stack-item .item-desc{
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--ink-muted);
-    max-width: 46ch;
-  }
-  .value-stack .stack-item .item-value{
-    flex-shrink: 0;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--accent);
-    white-space: nowrap;
-  }
-  .value-stack .total-row{
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: 26px 0 0;
-    margin-top: 6px;
-  }
-  .value-stack .total-row .total-label{
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 17px;
-    color: var(--ink);
-  }
-  .value-stack .total-row .total-amount{
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 25px;
-    color: var(--ink);
-  }
+  .program .date{ font-family:var(--body); font-weight:700; font-size:22px; line-height:1.4; display:block; }
+  .program p{ margin:4px 0 0; color:var(--ink-day-2); }
 
-  /* ---------- Price ---------- */
-  .price h2{ font-size: clamp(28px, 4vw, 32px); }
-  .price p{ color: #d7d4cc; font-size: 19px; }
+  /* ---------- What you get ---------- */
+  .stack{ background:var(--day); }
+  .stack ul{ list-style:none; margin:10px 0 0; padding:0; }
+  .stack li{
+    display:flex; justify-content:space-between; gap:20px;
+    padding:20px 0; border-top:1px solid var(--rule-day);
+  }
+  .stack li:last-child{ border-bottom:1px solid var(--rule-day); }
+  .stack h3{ font-family:var(--body); font-size:19px; line-height:1.5; margin:0 0 4px; }
+  .stack li p{ margin:0; font-size:16.5px; color:var(--ink-day-2); line-height:1.65; }
+  .stack .val{ white-space:nowrap; font-size:16px; color:var(--ink-day-2); padding-top:2px; }
+  .stack .total{ display:flex; justify-content:space-between; padding:22px 0 0; font-weight:700; font-size:20px; }
+  .stack .privacy{ font-size:15px; color:var(--ink-day-2); margin-top:28px; }
 
-  .price-figure{
-    margin: 44px 0;
-    padding: 38px 0;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    text-align: center;
+  /* ---------- Price + guarantee ---------- */
+  .price{ background:var(--day-2); }
+  .price .amount{
+    font-family:var(--body);
+    font-weight:700;
+    font-size:clamp(84px, 20vw, 130px);
+    line-height:.9;
+    margin:16px 0 8px;
   }
-  .price-figure .amount{
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 68px;
-    color: var(--accent);
-    line-height: 1;
+  .price .terms{ color:var(--ink-day-2); }
+  .guarantee{
+    margin-top:56px;
+    padding:28px 26px;
+    background:#fff;
+    border:2px solid #f0a63c;
+    border-top-width:8px;
+    border-radius:4px;
   }
-  .price-figure .caption{
-    margin-top: 12px;
-    color: var(--ink-muted);
-    font-size: 16px;
-  }
+  .guarantee h3{ font-size:44px; margin-bottom:14px; }
+  .guarantee .fine{ font-size:16px; color:var(--ink-day-2); margin:0; }
 
-  /* ---------- Final CTA / form ---------- */
-  .final-cta{ text-align: center; }
-  .final-cta h2{ font-size: clamp(28px, 4vw, 34px); }
+  /* ---------- Fit ---------- */
+  .fit{ background:var(--day-2); padding-top:0; }
+  .fit p{ color:var(--ink-day-2); }
+  .fit strong{ color:var(--ink-day); }
 
-  form.lead{
-    max-width: 440px;
-    margin: 40px auto 0;
-    text-align: right;
+  /* ---------- Form ---------- */
+  .signup{ background:#fff; border-top:1px solid var(--rule-day); }
+  form.lead{ margin-top:30px; }
+  form.lead label{ display:block; font-size:16px; color:var(--ink-day-2); margin:0 0 6px; }
+  form.lead input[type=text], form.lead input[type=tel]{
+    width:100%; font-family:var(--body); font-size:18px;
+    padding:14px 14px; margin:0 0 18px;
+    border:2px solid var(--rule-day); border-radius:4px; background:var(--day-2); color:var(--ink-day);
   }
-  form.lead label{
-    display: block;
-    font-size: 15px;
-    color: var(--ink-muted);
-    margin: 0 0 7px;
-  }
-  form.lead input{
-    width: 100%;
-    background: var(--bg-deep);
-    border: 1px solid var(--line);
-    color: var(--ink);
-    font-family: var(--font-body);
-    font-size: 17px;
-    padding: 15px 16px;
-    border-radius: 8px;
-    margin-bottom: 18px;
-  }
-  form.lead input:focus{
-    outline: 2px solid var(--accent);
-    outline-offset: 1px;
-  }
-  form.lead .cta-btn{ width: 100%; }
+  form.lead input:focus{ outline:none; border-color:#f0a63c; }
+  form.lead .consent{ display:flex; gap:10px; align-items:flex-start; font-size:15px; color:var(--ink-day-2); margin:0 0 22px; line-height:1.5; }
+  form.lead .consent input{ margin-top:4px; accent-color:var(--ink-day); }
+  form.lead .btn{ width:100%; }
+  .privacy-note{ font-size:14px; color:var(--ink-day-2); margin-top:16px; }
+  #thanks{ display:none; font-size:22px; font-weight:700; margin-top:24px; }
 
-  form.lead .consent{
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
-    color: var(--ink-muted);
-    line-height: 1.5;
-    margin: 0 0 20px;
-    cursor: pointer;
-  }
-  form.lead .consent input[type="checkbox"]{
-    width: auto;
-    margin: 3px 0 0;
-    flex-shrink: 0;
-    accent-color: var(--accent);
-  }
-  form.lead .consent a{
-    color: var(--accent);
-    text-decoration: underline;
-  }
+  footer{ background:#fff; color:var(--ink-day-2); font-size:14px; padding:24px 0 40px; }
+  footer p{ margin:0 0 6px; }
 
-  .privacy-note{
-    text-align: center;
-    font-size: 13px;
-    color: var(--ink-muted);
-    margin-top: 16px;
-    margin-bottom: 8px;
-  }
-
-  .form-note{
-    text-align: center;
-    font-size: 14px;
-    color: var(--ink-muted);
-    margin-top: 16px;
-  }
-
-  /* ---------- Footer ---------- */
-  footer{
-    padding: 48px 0 68px;
-    text-align: center;
-  }
-  footer p{
-    font-size: 14px;
-    color: var(--ink-muted);
-    margin: 0;
-  }
-
-  /* ---------- Sticky CTA bar ---------- */
-  .sticky-cta{
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--bg-deep);
-    border-top: 1px solid var(--line);
-    padding: 14px 20px;
-    box-sizing: border-box;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    transform: translateY(100%);
-    transition: transform 300ms ease;
-  }
-  .sticky-cta.is-visible{ transform: translateY(0); }
-  .sticky-cta .price-tag{
-    font-family: var(--font-display);
-    font-weight: 700;
-    color: var(--accent);
-    font-size: 16px;
-    white-space: nowrap;
-  }
-  .sticky-cta .cta-btn{
-    padding: 12px 26px;
-    font-size: 15px;
-    flex-shrink: 0;
-  }
-  @media (max-width: 380px){
-    .sticky-cta .price-tag{ display: none; }
-  }
-
-  @media (max-width: 480px){
-    section{ padding: 76px 0; }
-    body{ font-size: 18px; }
-    .problem li{ font-size: 18px; }
-    .story p{ font-size: 18px; }
+  @media (max-width:480px){
+    body{ font-size:18px; }
+    section{ padding:76px 0; }
+    .evening li{ grid-template-columns:54px 1fr; gap:14px; }
+    .evening time{ font-size:26px; }
   }
 </style>
 </head>
 <body>
 
-  <section class="hero">
-    <div class="wrap">
-      <img class="hero-logo" src="data:image/jpeg;base64,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" alt="אבא חי">
-      <h1>גמילה מקנאביס לאבות, <span class="accent-word">ב-30 יום</span></h1>
-      <p class="sub">להיות האבא הצלול והנוכח שהמשפחה שלך צריכה. בלי ערפל, בלי להסתתר במרפסת, עם אנרגיה בבוקר. <strong>כוח הרצון שלך + השיטה הדופאמינית</strong>, תוכנית מדויקת לכל רגע קשה שבניתי אחרי 20 שנה של עישון יומיומי.</p>
-      <a href="#form" class="cta-btn">אני רוצה את האתגר החינמי</a>
-      <p class="scarcity"><span class="dot">●</span> מחזור ראשון נפתח ב-4.1.2027 · 10 מקומות · ההרשמה נסגרת ב-31.12</p>
+  <header class="site-header">
+    <div class="bar">
+      <a href="#" class="logo"><img src="data:image/jpeg;base64,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" alt=""><span>אבא חי</span></a>
+      <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav">תפריט</button>
+      <nav class="site-nav" id="site-nav">
+        <a href="#story">מי אני</a>
+        <a href="#challenge">השיטה</a>
+        <a href="#program">איך זה עובד</a>
+        <a href="#price">מחיר</a>
+        <a href="#signup" class="btn">לאתגר החינמי</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="intro-video reveal">
+  <section class="hero day">
     <div class="wrap">
-      <div class="video-frame">
-        <iframe src="https://www.youtube.com/embed/_6IBpACopZ0"
-                title="אבא חי" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-      </div>
-    </div>
-  </section>
-
-  <section class="problem bg-alt reveal">
-    <div class="wrap">
-      <div class="beat"></div>
-      <h2>מכיר את הרגעים האלה?</h2>
-      <ul>
-        <li>מסיים לעשן וויד במרפסת, נכנס הביתה, וישר רץ לשטוף ידיים ולצחצח שיניים, רק שהילד לא יגיד "אבא, אתה מסריח".</li>
-        <li>הילד מספר לך מה היה היום בגן. אתה מהנהן, אומר "וואו, מגניב", ובראש אתה כבר במרפסת.</li>
-        <li>הג'וינט אחרי שהילדים נרדמים הוא הפרס שלך על היום. הזמן היחיד שהוא רק שלך.</li>
-        <li>אמרת "מחר אני מפסיק" יותר פעמים ממה שאתה זוכר. זה החזיק כמה ימים, ואז הגיע ערב אחד קשה.</li>
-        <li>אתה מפחד מהלילות בלי: לא להירדם, להתעצבן על הילדים, לא לדעת מה לעשות עם עצמך בערב.</li>
-        <li>אתה מסתיר את זה מהילדים, ולפעמים גם מבן או בת הזוג, וזה מתיש.</li>
-      </ul>
-      <p class="closer">אם משהו מזה מוכר לך, אתה לא לבד, ואתה בהחלט לא הראשון. זו בדיוק הסיבה שבניתי את התוכנית הזו.</p>
-    </div>
-  </section>
-
-  <section class="story reveal">
-    <div class="wrap">
-      <div class="beat"></div>
-      <h2>ניסיתי המון פעמים. לרוב זה החזיק שבוע.</h2>
-      <p>אולי שבועיים, ואז חזרתי. למה? כי לא הייתה לי תוכנית מדויקת. הייתה לי רק החלטה.</p>
-      <p>אחרי 20 שנה של עישון יומיומי, הבנתי שהחלטה לא מספיקה. אז בניתי תוכנית. לא רק "אני מפסיק", אלא מה בדיוק אני עושה בכל רגע קריטי: מה עושים כשעולה הדחף בערב, מה עושים כשקמים עם סיוטים באמצע הלילה, מה עושים עם כאבי השרירים, עם העצבנות, עם המצבים החברתיים.</p>
-      <p>בתוכנית שבניתי לעצמי היו כלים קונקרטיים לכל רגע כזה, כולל סיגריות פלסטיק בטעם מנטה ומסטיקים לרגעי הדחף הפיזי, ריצות ומתיחות לפריקת המתח בגוף, התרחקות מכוונת מסיטואציות מסוימות לאורך התוכנית, ודיבור חופשי למצלמה כשהדחף הרגשי עלה, לפרוק הכל, בלי פילטרים, בלי שאף אחד רואה.</p>
-      <blockquote>לא הייתי צריך לאלתר ב-2 בלילה. אני נקי כבר יותר משלוש שנים, לא שבוע, לא חודש. וידעתי שיום אחד, אולי הילדים שלי יראו איך אבא שלהם נלחם, ויהיו גאים בו.</blockquote>
-      <div style="text-align:center; margin-top: 40px;">
-        <a href="#form" class="cta-btn">אני רוצה את האתגר החינמי</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="clarify-wrap bg-alt reveal">
-    <div class="wrap">
-      <div class="beat"></div>
-      <h2>תתחיל בחינם: 3 ג'וינטים, 3 הקלטות</h2>
-      <p style="color: var(--accent); font-family: var(--font-display); font-weight: 600; margin-top: -8px;">לא צריך להפסיק כדי להתחיל.</p>
-      <div class="clarify">
-        <p>הכלי שהכי עזר לי בגמילה הוא <strong>דוקותרפיה</strong>: לדבר למצלמה של הטלפון. באוטו, במרפסת, בהליכה. בלי פילטרים, בלי שאף אחד רואה. לפני שאתה מחליט על משהו, תנסה את זה בעצמך.<br><br>
-        בשלושת הג'וינטים הבאים שלך, תדליק, תפתח את המצלמה ותדבר. לפני כל אחד תקבל ממני בוואטסאפ שאלה אחת. 3 דקות, מהטלפון שלך, ההקלטות נשארות אצלך בלבד. זה בדיוק מה שעושים בשבוע ההכנה של התוכנית, ואחרי שלוש הקלטות תדע אם השיטה הזו מדברת אליך.</p>
-      </div>
-      <div style="text-align:center; margin-top: 40px;">
-        <a href="#form" class="cta-btn">שלחו לי את השאלה הראשונה</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="program reveal">
-    <div class="wrap">
-      <div class="beat"></div>
-      <h2>שבוע הכנה, טקס פרידה, 30 יום</h2>
-      <table>
-        <tr><th>מתי</th><th>מה קורה</th></tr>
-        <tr><td class="wk">4.1</td><td><strong>שבוע הפרידה.</strong> ממשיכים לעשן, אבל מול המצלמה. מבינים את ההרגל מבחוץ, בונים את תפריט הדופמין האישי שלך בשיחה אחד על אחד, ומכינים את הבית.</td></tr>
-        <tr><td class="wk">11.1</td><td><strong>טקס הג'וינט האחרון.</strong> הג'וינט האחרון מול המצלמה, ואחריו זורקים את מה שנשאר ומוחקים את הדילר. הפרידה כבר עשויה.</td></tr>
-        <tr><td class="wk">12.1</td><td><strong>14 הימים הראשונים.</strong> הודעת בוקר שאומרת לך מה לצפות היום, פרוטוקול שינה מהלילה הראשון, וליווי צמוד בערבים.</td></tr>
-        <tr><td class="wk">26.1</td><td><strong>הערב החדש שלך.</strong> ריצת ערב, תחביבים, חברים ומסיבות, ומה הוויד הרדים כל השנים.</td></tr>
-        <tr><td class="wk">10.2</td><td><strong>יום 30.</strong> צופים בהקלטה של יום 0 ופוגשים את האבא שהיית. ומשם, תוכנית לשנה הקרובה.</td></tr>
-      </table>
-
-      <div class="value-stack">
-        <h3>מה בדיוק אתה מקבל</h3>
-        <ul class="stack-list">
-          <li class="stack-item">
-            <div>
-              <div class="item-name">אבחון הדופמין האישי + תפריט הדופמין</div>
-              <div class="item-desc">שיחה אישית איתי לפני שמתחילים. ממפים מתי, איפה ועם מי אתה מעשן, ובונים ערב שאתה באמת מחכה לו, בלי ג'וינט.</div>
-            </div>
-            <div class="item-value">שווי 350 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">שבוע הפרידה וטקס הג'וינט האחרון</div>
-              <div class="item-desc">מפסיקים כשהפרידה כבר עשויה, לא ב"מחר אני מפסיק". שבוע של הכנה מודרכת, יום אחרי יום.</div>
-            </div>
-            <div class="item-value">שווי 400 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">הסרט של אבא: שיטת הדוקותרפיה</div>
-              <div class="item-desc">38 שאלות הקלטה, מהשבוע הראשון ועד יום 30. הכלי שהכי עזר לי בגמילה, ומה שאתה לוקח איתך הלאה.</div>
-            </div>
-            <div class="item-value">ללא תמחור</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">מפת 14 הימים + פרוטוקול הלילה הראשון</div>
-              <div class="item-desc">יודעים מה יקרה לפני שזה קורה: שינה, חלומות, עצבנות, תיאבון. וכפתור 90 השניות לרגע שהקריז מכה.</div>
-            </div>
-            <div class="item-value">שווי 450 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">רומן בכיס: ליווי יומי 30 יום</div>
-              <div class="item-desc">צ'ק-אין כל ערב בוואטסאפ ותשובה אישית ממני. SOS בערבים, וביום שלישי כל היום. לא בוט, אני.</div>
-            </div>
-            <div class="item-value">שווי 900 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">מעגל האבות של יום שלישי</div>
-              <div class="item-desc">5 מפגשי זום חיים בימי שלישי, ועוד מפגש פתיחה ב-4.1, עם אבות שעוברים בדיוק את מה שאתה עובר. אפשר להשתתף בכינוי ובמצלמה כבויה.</div>
-            </div>
-            <div class="item-value">שווי 700 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">אח לדרך</div>
-              <div class="item-desc">אבא מהמחזור שעובר את אותם ימים בדיוק, לרגעים שבהם אני בעבודה.</div>
-            </div>
-            <div class="item-value">שווי 200 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">ריצת הערב + תפריט התחביבים</div>
-              <div class="item-desc">תוכנית תנועה הדרגתית לשעה שבה הג'וינט היה, ותחביב חדש שהוא רק שלך.</div>
-            </div>
-            <div class="item-value">שווי 150 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">ערכת הבית</div>
-              <div class="item-desc">מדריך לבן או בת הזוג ותסריט לשיחה עם הילדים לפי גיל. הבית הופך לצוות, לא לשוטר.</div>
-            </div>
-            <div class="item-value">שווי 250 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">בנק התשובות + פרוטוקול 24 השעות</div>
-              <div class="item-desc">איך אומרים לא לחברים בלי להסביר, ומה עושים אם מעדת. מעידה זה לא נפילה.</div>
-            </div>
-            <div class="item-value">שווי 200 ₪</div>
-          </li>
-          <li class="stack-item">
-            <div>
-              <div class="item-name">מועדון האבות החיים</div>
-              <div class="item-desc">אחרי יום 30: קהילת בוגרים ומפגש זום חודשי. נקי לתמיד, עם אנשים שעברו את זה.</div>
-            </div>
-            <div class="item-value">שווי 300 ₪</div>
-          </li>
-        </ul>
-
-        <div class="total-row">
-          <div class="total-label">שווי כולל</div>
-          <div class="total-amount">3,900 ₪ ומעלה</div>
+      <div class="hero-grid">
+        <div>
+          <h1>גמילה מקנאביס לאבות, ב-<span class="num">30</span> יום</h1>
+          <p class="lede">להיות האבא הצלול והנוכח שהמשפחה שלך צריכה. בלי ערפל, בלי להסתתר במרפסת, עם אנרגיה בבוקר.</p>
+          <div class="hero-actions">
+            <a href="#signup" class="btn">אני רוצה את האתגר החינמי</a>
+            <a href="#program" class="btn-ghost">איך זה עובד</a>
+          </div>
+          <div class="hero-facts">
+            <div><strong>4 בינואר</strong>מחזור ראשון נפתח</div>
+            <div><strong>10 אבות</strong>במחזור</div>
+            <div><strong>20 שנה</strong>עישנתי בעצמי</div>
+          </div>
         </div>
-        <p class="muted" style="font-size: 15px; margin-top: 22px;">על פרטיות: ההקלטות שלך נשארות בטלפון שלך ולא עולות לשום מקום. בקבוצת הוואטסאפ של המחזור, חברי הקבוצה רואים את מספרי הטלפון של אחד השני.</p>
+        <div class="rec">
+          <span class="tag"><span class="dot"></span>הסרט של רומן</span>
+          <iframe src="https://www.youtube.com/embed/_6IBpACopZ0" title="רומן מספר על הגמילה שלו" allow="encrypted-media" allowfullscreen loading="lazy"></iframe>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="price bg-alt reveal">
+  <section class="evening night">
     <div class="wrap">
-      <div class="beat"></div>
-      <h2>בוא נדבר תכלס על כסף</h2>
-      <p>תעשה חשבון כמה אתה מוציא בחודש על וויד, ניירות והמנצ'יז של הלילה. אצל רוב האבות התוכנית עולה פחות מחודש אחד של עישון.</p>
-      <p>מהרגע שאתה מפסיק להסתתר במרפסת, הכסף הזה נשאר בכיס שלך, כל חודש מחדש, לטובת הילדים והמשפחה.</p>
+      <h2>ערב רגיל, אצל אבא שמעשן</h2>
+      <ol>
+        <li><time>19:40</time><p>הילד מספר לך מה היה היום בגן. אתה מהנהן, אומר "וואו, מגניב", ובראש אתה כבר במרפסת.</p></li>
+        <li><time>20:30</time><p>הם נרדמים. עכשיו הזמן שלך, והג'וינט הוא הפרס על היום.</p></li>
+        <li><time>21:15</time><p>נכנס פנימה, שוטף ידיים, מצחצח שיניים, מסטיק. רק שאף אחד בבית לא ירגיש.</p></li>
+        <li><time>23:50</time><p>"מחר אני מפסיק." אמרת את זה יותר פעמים ממה שאתה זוכר. זה החזיק כמה ימים, ואז הגיע ערב אחד קשה.</p></li>
+        <li><time>02:00</time><p>אתה יודע ממה אתה מפחד: לילות בלי שינה, עצבים על הילדים, ערבים ריקים.</p></li>
+        <li><time>06:45</time><p>הילדים כבר ערים. אתה עוד לא באמת.</p></li>
+      </ol>
+      <p class="closer">אם משהו מזה מוכר לך, אתה לא לבד. ככה נראו הערבים שלי במשך שנים.</p>
+    </div>
+  </section>
 
-      <div class="price-figure">
-        <div class="amount">970 ₪</div>
-        <div class="caption">השקעה חד-פעמית · מחזור ראשון נפתח ב-4.1.2027 · 10 אבות בלבד</div>
+  <section class="story night" id="story">
+    <div class="wrap">
+      <h2>ניסיתי המון פעמים. לרוב זה החזיק שבוע.</h2>
+      <p>אחרי 20 שנה של עישון יומיומי הבנתי שהחלטה לבד לא מספיקה. כוח רצון הוא הבסיס, אבל הוא צריך תוכנית: מה עושים כשעולה הדחף בערב, כשקמים עם סיוטים באמצע הלילה, עם העצבנות, עם החברים.</p>
+      <p>אז בניתי תוכנית כזו לעצמי. ריצות בערב, תחביבים חדשים, התרחקות מכוונת מסיטואציות מסוימות, והכלי שהכי עזר לי: לדבר למצלמה של הטלפון. באוטו, במרפסת, בהליכה. בלי פילטרים, בלי שאף אחד רואה.</p>
+      <blockquote>לא הייתי צריך לאלתר ב-2 בלילה. אני נקי כבר יותר משלוש שנים, וידעתי שיום אחד הילדים שלי יראו איך אבא שלהם נלחם.</blockquote>
+    </div>
+  </section>
+
+  <section class="challenge night" id="challenge">
+    <div class="wrap">
+      <h2><span class="num">3</span> ג'וינטים, <span class="num">3</span> הקלטות</h2>
+      <p class="sub">לא צריך להפסיק כדי להתחיל.</p>
+      <p>לפני שאתה מחליט על משהו, תנסה את השיטה בעצמך, בחינם:</p>
+      <ol>
+        <li>תשאיר שם וטלפון, ותקבל ממני בוואטסאפ שאלה אחת.</li>
+        <li>בג'וינט הבא שלך, תדליק, תפתח את המצלמה ותענה עליה. 3 דקות.</li>
+        <li>ככה שלוש פעמים. ההקלטות נשארות בטלפון שלך בלבד.</li>
+      </ol>
+      <p>זה בדיוק מה שעושים בשבוע ההכנה של התוכנית. אחרי שלוש הקלטות תדע אם השיטה הזו מדברת אליך.</p>
+      <a href="#signup" class="btn">שלחו לי את השאלה הראשונה</a>
+    </div>
+  </section>
+  <div class="horizon" aria-hidden="true"></div>
+
+  <section class="program day" id="program">
+    <div class="wrap">
+      <h2>שבוע הכנה, טקס פרידה, <span class="num">30</span> יום</h2>
+      <ol>
+        <li><span class="date">4 בינואר</span><p><strong>שבוע הפרידה.</strong> ממשיכים לעשן, אבל מול המצלמה. בונים איתי בשיחה אישית את תפריט הדופמין שלך, ומכינים את הבית.</p></li>
+        <li><span class="date">11 בינואר</span><p><strong>טקס הג'וינט האחרון.</strong> הג'וינט האחרון מול המצלמה. אחריו זורקים את מה שנשאר ומוחקים את הדילר.</p></li>
+        <li><span class="date">12 בינואר</span><p><strong>14 הימים הראשונים.</strong> כל בוקר הודעה שאומרת מה לצפות היום, פרוטוקול שינה מהלילה הראשון, וליווי צמוד בערבים.</p></li>
+        <li><span class="date">26 בינואר</span><p><strong>הערב החדש שלך.</strong> ריצת ערב, תחביבים, חברים ומסיבות, ומה הוויד הרדים כל השנים.</p></li>
+        <li><span class="date">10 בפברואר</span><p><strong>יום 30.</strong> צופים בהקלטה של יום 0 ופוגשים את האבא שהיית. ומשם, תוכנית לשנה הקרובה.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="stack day">
+    <div class="wrap">
+      <h2>מה אתה מקבל</h2>
+      <ul>
+        <li><div><h3>אבחון הדופמין האישי ותפריט הדופמין</h3><p>שיחה אישית איתי לפני שמתחילים. ממפים מתי, איפה ועם מי אתה מעשן, ובונים ערב שאתה באמת מחכה לו.</p></div><span class="val">350 ₪</span></li>
+        <li><div><h3>שבוע הפרידה וטקס הג'וינט האחרון</h3><p>מפסיקים כשהפרידה כבר עשויה, לא ב"מחר אני מפסיק". שבוע של הכנה מודרכת, יום אחרי יום.</p></div><span class="val">400 ₪</span></li>
+        <li><div><h3>הסרט של אבא: שיטת הדוקותרפיה</h3><p>38 שאלות הקלטה, מהשבוע הראשון ועד יום 30. הכלי שהכי עזר לי, ומה שאתה לוקח איתך הלאה.</p></div><span class="val">ללא תמחור</span></li>
+        <li><div><h3>מפת 14 הימים ופרוטוקול הלילה הראשון</h3><p>יודעים מה יקרה לפני שזה קורה: שינה, חלומות, עצבנות, תיאבון. וכפתור 90 השניות לרגע שהקריז מכה.</p></div><span class="val">450 ₪</span></li>
+        <li><div><h3>רומן בכיס: ליווי יומי 30 יום</h3><p>צ'ק-אין כל ערב בוואטסאפ ותשובה אישית ממני. SOS בערבים, וביום שלישי כל היום. לא בוט, אני.</p></div><span class="val">900 ₪</span></li>
+        <li><div><h3>מעגל האבות של יום שלישי</h3><p>5 מפגשי זום חיים בימי שלישי, ועוד מפגש פתיחה ב-4 בינואר. אפשר להשתתף בכינוי ובמצלמה כבויה.</p></div><span class="val">700 ₪</span></li>
+        <li><div><h3>אח לדרך</h3><p>אבא מהמחזור שעובר את אותם ימים בדיוק, לרגעים שבהם אני בעבודה.</p></div><span class="val">200 ₪</span></li>
+        <li><div><h3>ריצת הערב ותפריט התחביבים</h3><p>תוכנית תנועה הדרגתית לשעה שבה הג'וינט היה, ותחביב חדש שהוא רק שלך.</p></div><span class="val">150 ₪</span></li>
+        <li><div><h3>ערכת הבית</h3><p>מדריך לבן או בת הזוג ותסריט לשיחה עם הילדים לפי גיל. הבית הופך לצוות, לא לשוטר.</p></div><span class="val">250 ₪</span></li>
+        <li><div><h3>בנק התשובות ופרוטוקול 24 השעות</h3><p>איך אומרים לא לחברים בלי להסביר, ומה עושים אם מעדת. מעידה זה לא נפילה.</p></div><span class="val">200 ₪</span></li>
+        <li><div><h3>מועדון האבות החיים</h3><p>אחרי יום 30: קהילת בוגרים ומפגש זום חודשי. נקי לתמיד, עם אנשים שעברו את זה.</p></div><span class="val">300 ₪</span></li>
+      </ul>
+      <div class="total"><span>שווי כולל</span><span>3,900 ₪ ומעלה</span></div>
+      <p class="privacy">ההקלטות שלך נשארות בטלפון שלך ולא עולות לשום מקום. בקבוצת הוואטסאפ של המחזור, חברי הקבוצה רואים את מספרי הטלפון של אחד השני.</p>
+    </div>
+  </section>
+
+  <section class="price day" id="price">
+    <div class="wrap">
+      <h2>המחיר</h2>
+      <p>תעשה חשבון כמה אתה מוציא בחודש על וויד, ניירות והמנצ'יז של הלילה. אצל רוב האבות התוכנית עולה פחות מחודש אחד של עישון. מהרגע שאתה מפסיק, הכסף הזה נשאר בכיס, כל חודש מחדש.</p>
+      <div class="amount">970 ₪</div>
+      <p class="terms">תשלום חד-פעמי. מחזור ראשון ל-10 אבות, נפתח ב-4 בינואר. ההרשמה נסגרת ב-31 בדצמבר או כשהמקומות מתמלאים. במחזורים הבאים המחיר יעלה.</p>
+
+      <div class="guarantee">
+        <h3>ערבות האבא החי</h3>
+        <p>עשית את העבודה ולא הפסקת? אתה מצטרף למחזור הבא, עליי.</p>
+        <p class="fine">"עשית את העבודה" אומר: השתתפת בשיחת הפתיחה ובלפחות 4 מתוך 6 מפגשי הזום, הקלטת את שבוע ההכנה ועשית את טקס הפרידה, ושלחת צ'ק-אין והקלטה ב-25 מתוך 30 הימים. "לא הפסקת" אומר: עישנת ב-3 ימים או יותר בשבוע האחרון, לפי מה שדיווחת בצ'ק-אינים.</p>
       </div>
-      <p class="muted" style="text-align:center; font-size: 14px; margin-top: -18px;">ההרשמה נסגרת ב-31.12 או כשמתמלאים 10 המקומות. במחזורים הבאים המחיר יעלה.</p>
     </div>
   </section>
 
-  <section class="story reveal">
+  <section class="fit day">
     <div class="wrap">
-      <div class="beat"></div>
-      <h2>ערבות האבא החי</h2>
-      <p>עשית את העבודה ולא הפסקת? אתה מצטרף למחזור הבא, עליי.</p>
-      <p class="muted" style="font-size: 17px;">"עשית את העבודה" אומר: השתתפת בשיחת הפתיחה ובלפחות 4 מתוך 6 מפגשי הזום (מפגש הפתיחה ו-5 מפגשי יום שלישי), הקלטת את שבוע ההכנה ועשית את טקס הפרידה, ושלחת צ'ק-אין והקלטה ב-25 מתוך 30 הימים. "לא הפסקת" אומר: עישנת ב-3 ימים או יותר בשבוע האחרון, לפי מה שדיווחת בצ'ק-אינים.</p>
+      <h2>למי זה מתאים</h2>
+      <p><strong>לאבות שמעשנים קנאביס ורוצים להפסיק.</strong> התוכנית בנויה סביב הקושי של אבא שצריך להיות נוכח, ער וזמין למשפחה. כוח הרצון שלך הוא הבסיס, והתוכנית נותנת לו כלים מדויקים לכל רגע קשה.</p>
+      <p>התוכנית לא מתאימה למי שמחזיק ברישיון לקנאביס רפואי. היא ממוקדת בגמילה מההרגל עצמו. אם עולים אצלך גם חרדה, טראומה או קושי רגשי מתמשך, חשוב לטפל בהם במקביל אצל איש מקצוע, ואני אעזור לך למצוא הפניה. לפני ההרשמה למחזור יש שיחת התאמה קצרה.</p>
     </div>
   </section>
 
-  <section class="clarify-wrap bg-alt reveal">
+  <section class="signup day" id="signup">
     <div class="wrap">
-      <div class="beat"></div>
-      <h2>למי זה מתאים, ולמי לא</h2>
-      <div class="clarify">
-        <p><strong>זו תוכנית ליווי לגמילה מקנאביס, ספציפית לאבות.</strong> היא בנויה סביב הקושי של אבא שצריך להיות נוכח, ער וזמין לילדים. הדחף לעשן הוא בקשה של המוח לדופאמין. כוח הרצון שלך הוא הבסיס, והתוכנית נותנת לו כלים מדויקים לכל רגע קשה.<br><br>
-        התוכנית לא מתאימה למי שמחזיק ברישיון לקנאביס רפואי. היא ממוקדת בגמילה מההרגל עצמו. אם עולים אצלך גם נושאים עמוקים יותר, כמו חרדה, טראומה או קושי רגשי מתמשך, חשוב לטפל בהם במקביל אצל איש מקצוע, ואני אעזור לך למצוא הפניה. לפני ההרשמה יש שיחת התאמה קצרה.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="final-cta reveal" id="form">
-    <div class="wrap">
-      <div class="beat"></div>
-      <h2>תתחיל באתגר החינמי</h2>
-      <p class="muted">השאר שם וטלפון, ותקבל ממני בוואטסאפ את השאלה הראשונה. אחרי שלוש הקלטות נדבר, אם תרצה, על המחזור שנפתח ב-4.1.</p>
+      <h2>תתחיל הערב</h2>
+      <p>תשאיר שם וטלפון, ותקבל ממני בוואטסאפ את השאלה הראשונה לג'וינט הבא שלך. אחרי שלוש הקלטות נדבר, אם תרצה, על המחזור שנפתח ב-4 בינואר.</p>
 
       <form class="lead" id="lead-form" method="POST">
         <input type="hidden" name="access_key" value="9fa3fe0f-5656-4baf-a54e-8a18757fac4d">
         <input type="hidden" name="subject" value="אבא חי: הרשמה לאתגר 3 ההקלטות">
         <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off">
 
-        <label for="name">שם מלא</label>
+        <label for="name">שם</label>
         <input id="name" name="name" type="text" required autocomplete="name">
 
         <label for="phone">טלפון (וואטסאפ)</label>
@@ -699,27 +479,22 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
 
         <label class="consent">
           <input type="checkbox" name="consent" required>
-          אני מאשר/ת את <a href="terms.html" target="_blank" rel="noopener">תקנון האתר</a> ואת <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a>
+          <span>אני מאשר/ת את <a href="terms.html" target="_blank" rel="noopener">תקנון האתר</a> ואת <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a></span>
         </label>
 
-        <button type="submit" class="cta-btn">שלחו לי את השאלה הראשונה</button>
+        <button type="submit" class="btn">שלחו לי את השאלה הראשונה</button>
       </form>
-      <p class="privacy-note">הפרטים שלך נשארים איתי בלבד. לא משותפים עם אף אחד, לא נמכרים לאף גורם.</p>
-      <p id="thanks" style="display:none; color: var(--accent); font-family: var(--font-display); font-weight: 600;">קיבלתי! השאלה הראשונה תגיע אליך בוואטסאפ עוד היום.</p>
+      <p class="privacy-note">הפרטים נשארים אצלי בלבד. לא משותפים ולא נמכרים.</p>
+      <p id="thanks">קיבלתי. השאלה הראשונה תגיע אליך בוואטסאפ עוד היום.</p>
     </div>
   </section>
 
   <footer>
     <div class="wrap">
-      <p>אבא חי · תוכנית ממוקדת לגמילה מקנאביס · לא מחליפה טיפול כללי בבריאות הנפש</p>
-      <p style="margin-top: 10px;"><a href="terms.html" style="color: var(--ink-muted);">תקנון האתר</a> · <a href="privacy.html" style="color: var(--ink-muted);">מדיניות פרטיות</a></p>
+      <p>אבא חי. תוכנית ממוקדת לגמילה מקנאביס, לא מחליפה טיפול בבריאות הנפש.</p>
+      <p><a href="terms.html">תקנון האתר</a> | <a href="privacy.html">מדיניות פרטיות</a></p>
     </div>
   </footer>
-
-  <div class="sticky-cta" id="sticky-cta">
-    <span class="price-tag">מחזור 1 · 4.1 · 10 מקומות</span>
-    <a href="#form" class="cta-btn">לאתגר החינמי</a>
-  </div>
 
   <script>
     var leadForm = document.getElementById('lead-form');
@@ -728,8 +503,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       var btn = leadForm.querySelector('button');
       btn.disabled = true;
       btn.textContent = 'שולח...';
-      var formData = new FormData(leadForm);
-      var payload = Object.fromEntries(formData.entries());
+      var payload = Object.fromEntries(new FormData(leadForm).entries());
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -745,57 +519,19 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       }).catch(function(){
         btn.disabled = false;
         btn.textContent = 'שלחו לי את השאלה הראשונה';
-        alert('משהו השתבש, נסה שוב.');
+        alert('השליחה לא עברה. בדוק את החיבור ונסה שוב.');
       });
     });
 
-    document.querySelectorAll('a[href="#form"]').forEach(function(link){
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        var target = document.getElementById('form');
-        if (target) {
-          target.classList.add('is-visible'); // make sure it's not stuck hidden if reveal hasn't fired yet
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+    var toggle = document.getElementById('menu-toggle');
+    var nav = document.getElementById('site-nav');
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
     });
-
-    var stickyBar = document.getElementById('sticky-cta');
-    var heroEl = document.querySelector('.hero');
-    var formEl = document.getElementById('form');
-    if (stickyBar && heroEl && formEl) {
-      var heroObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (!entry.isIntersecting) {
-            stickyBar.classList.add('is-visible');
-          } else {
-            stickyBar.classList.remove('is-visible');
-          }
-        });
-      }, { threshold: 0 });
-      heroObserver.observe(heroEl);
-
-      var formObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (entry.isIntersecting) {
-            stickyBar.classList.remove('is-visible');
-          }
-        });
-      }, { threshold: 0.3 });
-      formObserver.observe(formEl);
-    }
-
-    var revealEls = document.querySelectorAll('.reveal');
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.15 });
-    revealEls.forEach(function(el){ io.observe(el); });
+    nav.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ nav.classList.remove('open'); toggle.setAttribute('aria-expanded', false); });
+    });
   </script>
-
 </body>
 </html>

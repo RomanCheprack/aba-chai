@@ -508,6 +508,13 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       btn.disabled = true;
       btn.textContent = 'שולח...';
       var payload = Object.fromEntries(new FormData(leadForm).entries());
+      var qs = new URLSearchParams(window.location.search);
+      var source = qs.get('utm_source') || (qs.get('fbclid') ? 'פייסבוק' : (document.referrer ? document.referrer.split('/')[2] : 'ישיר'));
+      fetch('https://script.google.com/macros/s/AKfycbxkZhXZCuFNKsygYS168QwSFOYM_HHExEbSooy_OYqgHG_dXKUV54xbvvMRTkWdnQm_/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        body: new URLSearchParams({ name: payload.name || '', phone: payload.phone || '', source: source })
+      }).catch(function(){});
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },

@@ -286,6 +286,21 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     margin:16px 0 8px;
   }
   .price .terms{ color:var(--ink-day-2); }
+  .tiers{ list-style:none; margin:28px 0 18px; padding:0; display:grid; gap:16px; }
+  .tier{ background:#fff; border:1px solid var(--rule-day); border-radius:4px; padding:22px 24px; }
+  .tier p{ margin:0; font-size:16.5px; line-height:1.65; color:var(--ink-day-2); }
+  .tier .tier-note{ margin-top:10px; font-size:15px; font-weight:700; color:var(--ink-day); }
+  .tier-head{ display:flex; justify-content:space-between; align-items:baseline; gap:16px; margin-bottom:10px; }
+  .tier-head h3{ font-family:var(--body); font-size:22px; margin:0; }
+  .tier-amount{ font-family:var(--body); font-weight:700; font-size:34px; white-space:nowrap; color:var(--ink-day); }
+  .tier-main{ border:2px solid #f0a63c; border-top-width:8px; padding:24px 24px 26px; }
+  .tier-main .tier-amount{ font-size:52px; line-height:1; }
+  .tier-main .tier-head h3{ font-size:28px; }
+  .tier-flag{ font-size:14px !important; font-weight:700; color:#c97a12 !important; margin-bottom:6px !important; }
+  @media (min-width:900px){
+    .tiers{ grid-template-columns:1fr 1.25fr 1fr; align-items:start; margin-inline:-110px; }
+    .tier-head{ flex-direction:column; align-items:flex-start; gap:4px; }
+  }
   .guarantee{
     margin-top:56px;
     padding:28px 26px;
@@ -449,9 +464,26 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     <div class="wrap">
       <h2>המחיר</h2>
       <p>תעשה חשבון כמה אתה מוציא בחודש על וויד, ניירות והמנצ'יז של הלילה. אצל רוב האבות התוכנית עולה פחות מחודש אחד של עישון. מהרגע שאתה מפסיק, הכסף הזה נשאר בכיס, כל חודש מחדש.</p>
-      <div class="amount"><span class="nc-price">490</span> ₪</div>
-      <p class="next-price">במחזור הבא: <span class="nc-price-next">590</span> ₪</p>
-      <p class="terms">תשלום חד-פעמי, למחזור שמתחיל ביום שני <span class="nc-date">הקרוב</span>. נשארו בו <span class="nc-seats">4</span> מקומות, וההרשמה אליו נסגרת ביום חמישי <span class="nc-close">הקרוב</span>. המחיר עולה ב-<span class="nc-step">100</span> ₪ בכל מחזור.</p>
+      <ol class="tiers">
+        <li class="tier">
+          <div class="tier-head"><h3>אבא חי פלוס</h3><div class="tier-amount"><span class="nc-tier" data-offset="1000">1,490</span> ₪</div></div>
+          <p>כל מה שבתוכנית אבא חי, ועוד: שיחה אישית איתי כל שבוע, שיחה זוגית אחת עם בן או בת הזוג, ומענה ל-SOS גם בשעות היום.</p>
+          <p class="tier-note">מקום אחד בלבד בכל מחזור.</p>
+        </li>
+        <li class="tier tier-main">
+          <p class="tier-flag">המסלול שאני ממליץ עליו</p>
+          <div class="tier-head"><h3>אבא חי</h3><div class="tier-amount"><span class="nc-tier" data-offset="0">490</span> ₪</div></div>
+          <p>התוכנית המלאה: שבוע הפרידה, שיחת פתיחה אישית, מעגל האבות בזום כל שלישי, ליווי יומי בוואטסאפ, SOS בערבים, שותף לדרך, וכל הסרטונים והדפים.</p>
+          <p class="tier-note">כולל ערבות האבא החי.</p>
+        </li>
+        <li class="tier">
+          <div class="tier-head"><h3>לבד</h3><div class="tier-amount"><span class="nc-tier" data-offset="-100">390</span> ₪</div></div>
+          <p>הסרטונים, הדפים ושאלות ההקלטה היומיות בוואטסאפ. בלי מעגל, בלי שיחות אישיות ובלי ליווי.</p>
+          <p class="tier-note">בלי ערבות.</p>
+        </li>
+      </ol>
+      <p class="next-price">במחזור הבא כל המחירים עולים ב-<span class="nc-step">100</span> ₪.</p>
+      <p class="terms">תשלום חד-פעמי, למחזור שמתחיל ביום שני <span class="nc-date">הקרוב</span>. במסלולים עם ליווי נשארו <span class="nc-seats">4</span> מקומות, וההרשמה נסגרת ביום חמישי <span class="nc-close">הקרוב</span>.</p>
 
       <div class="guarantee">
         <h3>ערבות האבא החי</h3>
@@ -527,6 +559,10 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       fill('nc-seats', COHORT.seats);
       fill('nc-price', COHORT.price);
       fill('nc-price-next', COHORT.price + COHORT.step);
+      Array.prototype.forEach.call(document.querySelectorAll('.nc-tier'), function(el){
+        var v = COHORT.price + parseInt(el.getAttribute('data-offset'),10);
+        el.textContent = v.toLocaleString('en-US');
+      });
       fill('nc-step', COHORT.step);
     })();
 

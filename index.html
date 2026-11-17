@@ -311,7 +311,8 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   form.lead .consent input{ margin-top:4px; accent-color:var(--ink-day); }
   form.lead .btn{ width:100%; }
   .privacy-note{ font-size:14px; color:var(--ink-day-2); margin-top:16px; }
-  #thanks{ display:none; font-size:22px; font-weight:700; margin-top:24px; }
+  #thanks{ display:none; font-size:20px; font-weight:700; margin-top:24px; }
+  #thanks .btn{ margin-top:8px; }
 
   footer{ background:#fff; color:var(--ink-day-2); font-size:14px; padding:24px 0 40px; }
   footer p{ margin:0 0 6px; }
@@ -464,7 +465,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   <section class="signup day" id="signup">
     <div class="wrap">
       <h2>תתחיל הערב</h2>
-      <p>תשאיר שם וטלפון, ותקבל ממני בוואטסאפ את השאלה הראשונה לג'וינט הבא שלך. אחרי שלוש הקלטות נדבר, אם תרצה, על המחזור שנפתח ב-4 בינואר.</p>
+      <p>תשאיר שם וטלפון, ותקבל ממני בוואטסאפ את השאלה הראשונה לישיבה הבאה שלך. אחרי שלוש הקלטות נדבר, אם תרצה, על המחזור שנפתח ב-4 בינואר.</p>
 
       <form class="lead" id="lead-form" method="POST">
         <input type="hidden" name="access_key" value="9fa3fe0f-5656-4baf-a54e-8a18757fac4d">
@@ -485,7 +486,10 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
         <button type="submit" class="btn">שלחו לי את השאלה הראשונה</button>
       </form>
       <p class="privacy-note">הפרטים נשארים אצלי בלבד. לא משותפים ולא נמכרים.</p>
-      <p id="thanks">קיבלתי. השאלה הראשונה תגיע אליך בוואטסאפ עוד היום.</p>
+      <div id="thanks">
+        <p>נשאר צעד אחד: שלח לי הודעה בוואטסאפ, והשאלה הראשונה תגיע אליך מיד.</p>
+        <a id="wa-link" class="btn" href="https://wa.me/972525521657?text=%D7%94%D7%99%D7%99%20%D7%A8%D7%95%D7%9E%D7%9F%2C%20%D7%A0%D7%A8%D7%A9%D7%9E%D7%AA%D7%99%20%D7%9C%D7%90%D7%AA%D7%92%D7%A8%203%20%D7%99%D7%A9%D7%99%D7%91%D7%95%D7%AA">פתח וואטסאפ ושלח</a>
+      </div>
     </div>
   </section>
 
@@ -513,6 +517,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
           leadForm.style.display = 'none';
           document.getElementById('thanks').style.display = 'block';
           if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+          setTimeout(function(){ window.location.href = document.getElementById('wa-link').href; }, 900);
         } else {
           throw new Error(data.message || 'submit failed');
         }

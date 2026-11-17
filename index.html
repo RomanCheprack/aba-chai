@@ -143,6 +143,8 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     .hero-facts strong{ font-size:20px; }
   }
 
+  .nc-line{ margin:18px 0 0; font-size:16px; color:var(--ink-day-2); }
+  .next-price{ margin:-4px 0 12px; font-size:18px; color:#c97a12; font-weight:700; }
   /* ---------- Hero: the balcony ---------- */
   .hero{
     background:linear-gradient(160deg, #fbe9d9 0%, var(--day-2) 45%, var(--day) 100%);
@@ -351,9 +353,10 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
             <a href="#signup" class="btn">אני רוצה את האתגר החינמי</a>
             <a href="#program" class="btn-ghost">איך זה עובד</a>
           </div>
+          <p class="nc-line">המחזור הקרוב נפתח ביום שני <span class="nc-date"></span>. נשארו <span class="nc-seats">4</span> מקומות, ב-<span class="nc-price">490</span> ₪. במחזור הבא המחיר עולה.</p>
           <div class="hero-facts">
-            <div><strong>כל יום שני</strong>נפתח מחזור חדש</div>
-            <div><strong>490 ₪</strong>מחיר מייסדים</div>
+            <div><strong class="nc-date">יום שני</strong>המחזור הקרוב</div>
+            <div><strong><span class="nc-seats">4</span> מקומות</strong>במחזור הזה</div>
             <div><strong>20 שנה</strong>עישנתי בעצמי</div>
           </div>
         </div>
@@ -443,8 +446,9 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     <div class="wrap">
       <h2>המחיר</h2>
       <p>תעשה חשבון כמה אתה מוציא בחודש על וויד, ניירות והמנצ'יז של הלילה. אצל רוב האבות התוכנית עולה פחות מחודש אחד של עישון. מהרגע שאתה מפסיק, הכסף הזה נשאר בכיס, כל חודש מחדש.</p>
-      <div class="amount">490 ₪</div>
-      <p class="terms">מחיר מייסדים, תשלום חד-פעמי. המחיר עולה עם המחזורים הבאים. מחזור חדש נפתח כל יום שני, וההרשמה אליו נסגרת ביום חמישי שלפני.</p>
+      <div class="amount"><span class="nc-price">490</span> ₪</div>
+      <p class="next-price">במחזור הבא: <span class="nc-price-next">590</span> ₪</p>
+      <p class="terms">תשלום חד-פעמי, למחזור שמתחיל ביום שני <span class="nc-date">הקרוב</span>. נשארו בו <span class="nc-seats">4</span> מקומות, וההרשמה אליו נסגרת ביום חמישי <span class="nc-close">הקרוב</span>. המחיר עולה ב-<span class="nc-step">100</span> ₪ בכל מחזור.</p>
 
       <div class="guarantee">
         <h3>ערבות האבא החי</h3>
@@ -501,6 +505,28 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   </footer>
 
   <script>
+
+    // Next cohort: update these four values by hand when needed.
+    var COHORT = { first: '2026-11-30', seats: 4, price: 490, step: 100 };
+    (function(){
+      var now = new Date();
+      var d = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var daysToMon = (8 - d.getDay()) % 7 || 7;
+      var mon = new Date(d); mon.setDate(d.getDate() + daysToMon);
+      var close = new Date(mon); close.setDate(mon.getDate() - 4);
+      if (d > close) { mon.setDate(mon.getDate() + 7); close.setDate(close.getDate() + 7); }
+      var first = new Date(COHORT.first + 'T00:00:00');
+      if (mon < first) { mon = first; close = new Date(first); close.setDate(first.getDate() - 4); }
+      function fmt(x){ return x.getDate() + '.' + (x.getMonth() + 1); }
+      function fill(cls, val){ document.querySelectorAll('.' + cls).forEach(function(el){ el.textContent = val; }); }
+      fill('nc-date', fmt(mon));
+      fill('nc-close', fmt(close));
+      fill('nc-seats', COHORT.seats);
+      fill('nc-price', COHORT.price);
+      fill('nc-price-next', COHORT.price + COHORT.step);
+      fill('nc-step', COHORT.step);
+    })();
+
     var leadForm = document.getElementById('lead-form');
     leadForm.addEventListener('submit', function(e){
       e.preventDefault();

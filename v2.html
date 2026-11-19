@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<script async src="https://cdn.pagesense.io/js/abahai/d70e56d591cb4f4c9a030d2c031292c3.js"></script>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1286446833546477');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>אבחון הערב · אבא חי</title>
+<meta name="description" content="אבחון של 60 שניות לאבות שמעשנים בערב: כמה הוויד לקח ממך, למה לא הצלחת להפסיק, ומה לעשות כבר הערב.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karantina:wght@700&family=Oswald:wght@600&family=Frank+Ruhl+Libre:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f9f8;
+    --bg-2:#eef2ef;
+    --ink:#1a2233;
+    --ink-2:#4f5869;
+    --rule:#cfd6d2;
+    --amber:#f0a63c;
+    --amber-ink:#c97a12;
+    --night:#16213a;
+    --display:'Karantina', 'Frank Ruhl Libre', serif;
+    --body:'Frank Ruhl Libre', Georgia, serif;
+  }
+  *{ box-sizing:border-box; }
+  body{ margin:0; font-family:var(--body); font-size:18px; line-height:1.7; color:var(--ink); background:var(--bg); -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
+  .num{ font-family:'Oswald', var(--body); font-weight:600; letter-spacing:-.5px; unicode-bidi:isolate; direction:ltr; }
+  .ltr{ unicode-bidi:isolate; direction:ltr; white-space:nowrap; }
+  #result .big div{ border-top:2px solid var(--amber); }
+  #result .big strong{ color:var(--ink); }
+  #result .big span{ color:var(--ink-2); }
+  a{ color:inherit; }
+  :focus-visible{ outline:3px solid var(--amber); outline-offset:3px; }
+  button{ font-family:inherit; }
+
+  .top{ padding:14px 0; }
+  .logo{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo img{ width:36px; height:36px; border-radius:50%; object-fit:cover; }
+  .logo span{ font-family:var(--display); font-size:28px; line-height:1; }
+
+  .hero{ padding:6px 0 48px; }
+  .hero-grid{ display:grid; gap:22px; }
+  @media (min-width:900px){ .hero-grid{ grid-template-columns:1.05fr .95fr; gap:48px; align-items:start; } }
+  .callout{ margin:0 0 6px; font-size:16px; font-weight:700; color:var(--amber-ink); }
+  h1{ font-family:var(--display); font-weight:700; font-size:clamp(46px, 11vw, 78px); line-height:.92; margin:0 0 12px; }
+  .sub{ margin:0 0 18px; font-size:17.5px; color:var(--ink-2); max-width:520px; }
+
+  /* Quiz card */
+  .quiz{ background:#fff; border:2px solid var(--amber); border-top-width:8px; border-radius:6px; padding:20px 18px 18px; }
+  .progress{ height:4px; background:var(--bg-2); border-radius:2px; margin-bottom:14px; overflow:hidden; }
+  .progress i{ display:block; height:100%; width:0; background:var(--amber); transition:width .25s ease; }
+  .step-count{ font-size:14px; color:var(--ink-2); margin:0 0 4px; }
+  .q{ font-family:var(--body); font-weight:700; font-size:22px; line-height:1.3; margin:0 0 14px; }
+  .opts{ display:grid; gap:10px; }
+  .opt{ display:block; width:100%; text-align:right; font-size:18px; padding:13px 16px; border:1.5px solid var(--rule); border-radius:6px; background:var(--bg); color:var(--ink); cursor:pointer; }
+  .opt:hover{ border-color:var(--amber); background:#fff8ec; }
+  .opt:active{ transform:scale(.99); }
+  .step{ display:none; }
+  .step.on{ display:block; }
+  .back{ margin-top:12px; background:none; border:0; color:var(--ink-2); font-size:15px; cursor:pointer; padding:4px 0; text-decoration:underline; }
+  label.f{ display:block; font-size:15px; font-weight:700; margin:10px 0 4px; }
+  input[type=text], input[type=tel]{ width:100%; font-family:inherit; font-size:18px; padding:11px 12px; border:1.5px solid var(--rule); border-radius:6px; background:#fff; }
+  input[type=text]:focus, input[type=tel]:focus{ border-color:var(--amber); outline:none; }
+  .pref{ display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-top:6px; }
+  .pref label{ display:flex; align-items:center; justify-content:center; gap:6px; text-align:center; font-size:15.5px; padding:10px 6px; border:1.5px solid var(--rule); border-radius:6px; cursor:pointer; background:var(--bg); }
+  .pref input{ accent-color:var(--amber-ink); }
+  .pref label:has(input:checked){ border-color:var(--amber); background:#fff8ec; font-weight:700; }
+  .consent{ display:flex; gap:8px; align-items:flex-start; font-size:14px; color:var(--ink-2); margin:12px 0 4px; line-height:1.5; }
+  .consent input{ margin-top:4px; accent-color:var(--amber-ink); }
+  .go{ display:block; width:100%; margin-top:12px; font-weight:700; font-size:20px; padding:15px; border:0; border-radius:6px; background:var(--amber); color:#1b1405; cursor:pointer; }
+  .go:hover{ background:#f6b85c; }
+  .go:disabled{ opacity:.6; cursor:wait; }
+  .fine{ font-size:13.5px; color:var(--ink-2); margin:10px 0 0; text-align:center; }
+
+  /* Sample result (proof) */
+  .sample{ background:var(--night); color:#eae6dc; border-radius:6px; padding:20px 20px 18px; }
+  .sample .lbl{ font-size:14px; color:#a9b0c4; margin:0 0 10px; }
+  .big{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:14px; }
+  .big div{ border-top:1px solid #2f3a5a; padding-top:8px; }
+  .big strong{ display:block; font-size:clamp(30px, 7vw, 40px); line-height:1.05; color:#ffc35a; }
+  .big span{ font-size:14.5px; color:#a9b0c4; }
+  .sample .type{ font-family:var(--display); font-size:34px; line-height:1; margin:0 0 6px; }
+  .sample p{ margin:0; font-size:16px; color:#cfd3de; }
+
+  /* Objections */
+  .why{ background:var(--bg-2); padding:44px 0 48px; }
+  .why h2{ font-family:var(--display); font-size:clamp(38px, 8vw, 54px); line-height:.95; margin:0 0 20px; }
+  .obj{ list-style:none; margin:0; padding:0; display:grid; gap:18px; max-width:640px; }
+  .obj li{ border-right:4px solid var(--amber); padding:2px 16px 2px 0; }
+  .obj h3{ font-family:var(--body); font-size:19px; margin:0 0 2px; }
+  .obj p{ margin:0; color:var(--ink-2); font-size:16.5px; }
+  .me{ display:flex; gap:14px; align-items:center; margin-top:30px; max-width:640px; }
+  .me img{ width:56px; height:56px; border-radius:50%; object-fit:cover; flex:none; }
+  .me p{ margin:0; font-size:16px; color:var(--ink-2); }
+  .again{ display:inline-block; margin-top:26px; font-weight:700; font-size:18px; padding:13px 22px; border-radius:6px; background:var(--amber); color:#1b1405; text-decoration:none; }
+
+  footer{ padding:22px 0 30px; font-size:13.5px; color:var(--ink-2); }
+  footer a{ margin-left:14px; }
+
+  /* Result */
+  #result{ display:none; }
+  #result.on{ display:block; }
+  .r-head{ font-family:var(--display); font-size:clamp(40px, 9vw, 60px); line-height:.95; margin:0 0 6px; }
+  .r-block{ margin-top:18px; }
+  .r-block h3{ font-family:var(--body); font-size:19px; margin:0 0 4px; }
+  .r-block p{ margin:0 0 8px; color:var(--ink-2); font-size:17px; }
+  .call{ background:#fff8ec; border:1.5px solid var(--amber); border-radius:6px; padding:14px 16px; margin-top:18px; }
+  .call p{ margin:0; color:var(--ink); }
+  .vid{ position:relative; width:100%; max-width:300px; aspect-ratio:9/16; border-radius:10px; overflow:hidden; background:#000; margin-top:6px; }
+  .vid iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .wa{ display:inline-block; margin-top:12px; font-weight:700; font-size:16px; color:var(--amber-ink); }
+  @media (prefers-reduced-motion: reduce){ .progress i{ transition:none; } }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap"><a href="./" class="logo"><img src="data:image/jpeg;base64,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" alt=""><span>אבא חי</span></a></div>
+  </header>
+
+  <main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div id="intro">
+        <p class="callout">לאבות שמעשנים קנאביס בערבים</p>
+        <h1>מה הג'וינט של הערב באמת עולה לך?</h1>
+        <p class="sub">אבחון של <span class="num">60</span> שניות: כמה כסף וערבים הוויד לקח ממך, למה הניסיונות להפסיק לא החזיקו, ומה אפשר לעשות כבר הערב. אחרי האבחון אני מתקשר לבנות איתך תוכנית לערב. בחינם.</p>
+
+        <form class="quiz" id="quiz" novalidate>
+          <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+
+          <div class="step on" data-step="1">
+            <p class="step-count">שאלה 1 מתוך 6</p>
+            <p class="q">כמה ערבים בשבוע אתה מעשן?</p>
+            <div class="opts">
+              <button type="button" class="opt" data-k="nights" data-v="1.5" data-t="1–2"><span class="num">1–2</span> ערבים</button>
+              <button type="button" class="opt" data-k="nights" data-v="3.5" data-t="3–4"><span class="num">3–4</span> ערבים</button>
+              <button type="button" class="opt" data-k="nights" data-v="5.5" data-t="5–6"><span class="num">5–6</span> ערבים</button>
+              <button type="button" class="opt" data-k="nights" data-v="7" data-t="כל ערב">כל ערב</button>
+            </div>
+          </div>
+
+          <div class="step" data-step="2">
+            <p class="step-count">שאלה 2 מתוך 6</p>
+            <p class="q">כמה כסף יוצא על זה בחודש? וויד, ניירות, והנשנושים של הלילה.</p>
+            <div class="opts">
+              <button type="button" class="opt" data-k="money" data-v="250" data-t="עד 300">עד <span class="num">300</span> ₪</button>
+              <button type="button" class="opt" data-k="money" data-v="450" data-t="300–600"><span class="num">300–600</span> ₪</button>
+              <button type="button" class="opt" data-k="money" data-v="800" data-t="600–1,000"><span class="num">600–1,000</span> ₪</button>
+              <button type="button" class="opt" data-k="money" data-v="1200" data-t="מעל 1,000">יותר מ-<span class="num">1,000</span> ₪</button>
+            </div>
+            <button type="button" class="back">חזרה</button>
+          </div>
+
+          <div class="step" data-step="3">
+            <p class="step-count">שאלה 3 מתוך 6</p>
+            <p class="q">כמה שנים זה ככה?</p>
+            <div class="opts">
+              <button type="button" class="opt" data-k="years" data-v="2" data-t="פחות מ-3">פחות מ-3 שנים</button>
+              <button type="button" class="opt" data-k="years" data-v="6" data-t="3–10"><span class="num">3–10</span> שנים</button>
+              <button type="button" class="opt" data-k="years" data-v="15" data-t="10–20"><span class="num">10–20</span> שנה</button>
+              <button type="button" class="opt" data-k="years" data-v="22" data-t="מעל 20">יותר מ-20 שנה</button>
+            </div>
+            <button type="button" class="back">חזרה</button>
+          </div>
+
+          <div class="step" data-step="4">
+            <p class="step-count">שאלה 4 מתוך 6</p>
+            <p class="q">מה הג'וינט נותן לך בעיקר?</p>
+            <div class="opts">
+              <button type="button" class="opt" data-k="gives" data-v="calm" data-t="רוגע אחרי היום">לרדת מההילוך של היום</button>
+              <button type="button" class="opt" data-k="gives" data-v="reward" data-t="פרס">פרס על יום קשה</button>
+              <button type="button" class="opt" data-k="gives" data-v="sleep" data-t="שינה">עוזר לי להירדם</button>
+              <button type="button" class="opt" data-k="gives" data-v="me" data-t="זמן לעצמי">הזמן היחיד שהוא רק שלי</button>
+            </div>
+            <button type="button" class="back">חזרה</button>
+          </div>
+
+          <div class="step" data-step="5">
+            <p class="step-count">שאלה 5 מתוך 6</p>
+            <p class="q">כמה פעמים כבר ניסית להפסיק?</p>
+            <div class="opts">
+              <button type="button" class="opt" data-k="tries" data-v="0" data-t="אף פעם">עוד לא ניסיתי</button>
+              <button type="button" class="opt" data-k="tries" data-v="1" data-t="פעם-פעמיים">פעם או פעמיים</button>
+              <button type="button" class="opt" data-k="tries" data-v="3" data-t="הרבה">יותר פעמים ממה שאני רוצה לספור</button>
+            </div>
+            <button type="button" class="back">חזרה</button>
+          </div>
+
+          <div class="step" data-step="6">
+            <p class="step-count">כמעט שם</p>
+            <p class="q">לאן לשלוח את האבחון?</p>
+            <label class="f" for="name">שם</label>
+            <input id="name" name="name" type="text" required autocomplete="given-name">
+            <label class="f" for="phone">טלפון</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel">
+            <label class="f">איך נוח שאחזור אליך?</label>
+            <div class="pref">
+              <label><input type="radio" name="pref" value="שיחה" checked> שיחת טלפון</label>
+              <label><input type="radio" name="pref" value="וואטסאפ"> וואטסאפ קודם</label>
+            </div>
+            <label class="consent"><input type="checkbox" id="consent" required><span>מאשר/ת את <a href="terms.html" target="_blank" rel="noopener">התקנון</a> ואת <a href="privacy.html" target="_blank" rel="noopener">מדיניות הפרטיות</a></span></label>
+            <button type="submit" class="go" id="go">הצג לי את האבחון</button>
+            <button type="button" class="back">חזרה</button>
+          </div>
+          <p class="fine">התשובות נשארות אצלי בלבד. אף אחד בבית או בעבודה לא יידע.</p>
+        </form>
+      </div>
+
+      <div id="result" aria-live="polite">
+        <p class="callout" id="r-hello"></p>
+        <h2 class="r-head" id="r-type"></h2>
+        <div class="big" style="margin-top:14px">
+          <div><strong class="num" id="r-money"></strong><span id="r-money-l"></span></div>
+          <div><strong class="num" id="r-nights"></strong><span id="r-nights-l"></span></div>
+        </div>
+        <div class="r-block">
+          <h3>למה זה לא החזיק עד היום</h3>
+          <p id="r-why"></p>
+        </div>
+        <div class="r-block">
+          <h3>מה עושים כבר הערב</h3>
+          <p>לפני שאתה מדליק, תניח את הטלפון ותקליט את עצמך עונה על שאלה אחת: <strong>איך הכל התחיל?</strong> מתי, עם מי, ולמה. בלי הגבלת זמן, ואף אחד לא רואה את זה חוץ ממך. ככה זה נראה אצלי:</p>
+          <div class="vid"><iframe src="https://www.youtube.com/embed/_6IBpACopZ0" title="רומן מקליט את עצמו" allow="encrypted-media" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+        <div class="call"><p id="r-call"></p></div>
+        <a class="wa" id="r-wa" href="#" target="_blank" rel="noopener">רוצה לכתוב לי עכשיו? וואטסאפ</a>
+      </div>
+
+      <aside class="sample" id="sample" aria-label="דוגמה לאבחון">
+        <p class="lbl">ככה נראה אבחון אמיתי</p>
+        <div class="big">
+          <div><strong class="num">108,000 ₪</strong><span>יצאו על וויד ב-15 שנה</span></div>
+          <div><strong class="num">4,290</strong><span>ערבים עם ג'וינט</span></div>
+        </div>
+        <p class="type">הפרס של סוף היום</p>
+        <p>המוח שלך לא מחכה לג'וינט. הוא מחכה לפרס. בלי פרס אחר שמחכה לך בערב, הוא מנצח.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="why" id="why">
+    <div class="wrap">
+      <h2>לפני שאתה ממלא</h2>
+      <ul class="obj">
+        <li><h3>"אני לא מוכן להפסיק עכשיו."</h3><p>לא צריך. האבחון לא מחייב כלום, וגם בשיחה אף אחד לא יבקש ממך להפסיק מחר בבוקר.</p></li>
+        <li><h3>"מי יראה את התשובות?"</h3><p>רק אני. לא שולחים לך מיילים, לא מוסיפים לקבוצות, ובשיחה אתה מחליט כמה לספר.</p></li>
+        <li><h3>"זה עוד ניסיון למכור לי משהו?"</h3><p>בשיחה נבנה לך תוכנית לערב שאפשר להשתמש בה גם לבד. אם תרצה ליווי, נדבר על התוכנית. אם לא, התוכנית לערב נשארת אצלך.</p></li>
+      </ul>
+      <div class="me">
+        <img src="data:image/jpeg;base64,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" alt="">
+        <p><strong>רומן.</strong> אבא, עישנתי <span class="num">20</span> שנה והפסקתי. היום אני מלווה אבות שרוצים לחזור להיות נוכחים בערב.</p>
+      </div>
+      <a href="#intro" class="again">לאבחון שלי</a>
+    </div>
+  </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <a href="terms.html">תקנון</a><a href="privacy.html">מדיניות פרטיות</a><a href="program.html">התוכנית המלאה</a>
+      <p style="margin:10px 0 0">אבא חי היא תוכנית ליווי ואינה טיפול רפואי או נפשי. אינה מיועדת למחזיקי רישיון לקנאביס רפואי. האתר משתמש בכלי מדידה אנונימיים לשיפור הדף.</p>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var PHONE = '972525521657';
+    var quiz = document.getElementById('quiz');
+    var steps = quiz.querySelectorAll('.step');
+    var bar = document.getElementById('bar');
+    var ans = {}, txt = {}, cur = 1, started = false;
+
+    function show(n){
+      cur = n;
+      steps.forEach(function(s){ s.classList.toggle('on', +s.dataset.step === n); });
+      bar.style.width = ((n - 1) / steps.length * 100) + '%';
+      var first = quiz.querySelector('.step.on .opt, .step.on input');
+      if (first && n > 1) first.focus({ preventScroll: true });
+    }
+    quiz.querySelectorAll('.opt').forEach(function(b){
+      b.addEventListener('click', function(){
+        if (!started){ started = true; if (typeof fbq === 'function') fbq('trackCustom', 'QuizStart'); }
+        ans[b.dataset.k] = b.dataset.v; txt[b.dataset.k] = b.dataset.t;
+        show(cur + 1);
+      });
+    });
+    quiz.querySelectorAll('.back').forEach(function(b){ b.addEventListener('click', function(){ show(Math.max(1, cur - 1)); }); });
+
+    var TYPES = {
+      calm:  ['הכפתור לכיבוי הראש', 'הוויד הפך לדרך היחידה שלך לרדת מההילוך של היום. כשמוציאים אותו בלי לבנות דרך אחרת לרדת, הראש נשאר דולק עד מאוחר. זה לא חוסר כוח רצון. פשוט לא הייתה תוכנית למה שבא במקום.'],
+      reward:['הפרס של סוף היום', 'המוח שלך לא מחכה לג\'וינט. הוא מחכה לפרס. החשק מתחיל כבר כשהילדים במקלחת. כשמוציאים את הפרס ולא שמים במקומו פרס אחר, הערב מרגיש ריק, והמוח מנצח.'],
+      sleep: ['כדור השינה', 'הגוף התרגל להירדם רק עם זה. הלילות הראשונים בלי הם הכי קשים, ושם רוב הניסיונות נשברים. זה צפוי וזה עובר, אבל רק עם תוכנית ללילות הראשונים.'],
+      me:    ['הזמן היחיד שלי', 'העניין הוא לא הג\'וינט, אלא השעה הזאת. כשמוותרים עליה יחד איתו, זה מרגיש כמו לוותר על עצמך. צריך לשמור את השעה, ולמלא אותה אחרת.']
+    };
+    function fmt(n){ return Math.round(n).toLocaleString('en-US'); }
+    function round(n, to){ return Math.round(n / to) * to; }
+
+    function nextCall(){
+      var parts = new Intl.DateTimeFormat('en-US', { timeZone:'Asia/Jerusalem', weekday:'short', hour:'numeric', minute:'numeric', hour12:false }).formatToParts(new Date());
+      var wd = parts.find(function(p){ return p.type === 'weekday'; }).value;
+      var h = +parts.find(function(p){ return p.type === 'hour'; }).value % 24;
+      var m = +parts.find(function(p){ return p.type === 'minute'; }).value;
+      var t = h + m / 60;
+      var day = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(wd);
+      function win(d){ if (d === 2) return [9, 22]; if (d >= 0 && d <= 4) return [17, 22.5]; return null; }
+      var w = win(day);
+      if (w && t >= w[0] && t < w[1]) return { now:true };
+      if (w && t < w[0]) return { now:false, when: 'היום מ-' + (w[0] === 9 ? '9:00' : '17:00') };
+      var names = ['ראשון','שני','שלישי','רביעי','חמישי'];
+      for (var i = 1; i <= 7; i++){
+        var d = (day + i) % 7, ww = win(d);
+        if (ww) return { now:false, when: (i === 1 ? 'מחר' : 'ביום ' + names[d]) + ' מ-' + (ww[0] === 9 ? '9:00' : '17:00') };
+      }
+    }
+
+    function render(name, pref){
+      var n = +ans.nights, mo = +ans.money, y = +ans.years;
+      var tp = TYPES[ans.gives] || TYPES.reward;
+      document.getElementById('r-hello').textContent = name + ', זה האבחון שלך';
+      document.getElementById('r-type').textContent = tp[0];
+      document.getElementById('r-money').textContent = fmt(round(mo * 12 * y, 1000)) + ' ₪';
+      document.getElementById('r-money-l').textContent = 'יצאו על וויד ב-' + y + ' שנים, בערך';
+      document.getElementById('r-nights').textContent = fmt(round(n * 52 * y, 10));
+      document.getElementById('r-nights-l').textContent = 'ערבים עם ג\'וינט';
+      var why = tp[1];
+      if (+ans.tries >= 3) why += ' וכמה שיותר ניסיונות נשברו, ככה גדל הסיפור שאתה פשוט חלש. הוא לא נכון.';
+      document.getElementById('r-why').textContent = why;
+      var c = nextCall(), msg;
+      if (pref === 'וואטסאפ') msg = c.now ? 'אשלח לך הודעה בוואטסאפ בדקות הקרובות, ממספר 052-5521657. נקבע זמן לשיחה של 15 דקות לבניית התוכנית לערב שלך.' : 'אשלח לך הודעה בוואטסאפ ' + c.when + ', ממספר 052-5521657. נקבע זמן לשיחה של 15 דקות לבניית התוכנית לערב שלך.';
+      else msg = c.now ? 'אני מתקשר אליך בדקות הקרובות ממספר 052-5521657. שיחה של 15 דקות שבה נבנה יחד תוכנית לערב שלך, בחינם.' : 'אני מתקשר אליך ' + c.when + ' ממספר 052-5521657. שיחה של 15 דקות שבה נבנה יחד תוכנית לערב שלך, בחינם.';
+      document.getElementById('r-call').innerHTML = msg.replace('052-5521657','<span class="ltr">052-5521657</span>');
+      document.getElementById('r-wa').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent('היי רומן, עשיתי את אבחון הערב. יצא לי "' + tp[0] + '".');
+      return { type: tp[0], money: fmt(round(mo * 12 * y, 1000)), nights: fmt(round(n * 52 * y, 10)), now: c.now };
+    }
+
+    quiz.addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value.trim();
+      var phone = document.getElementById('phone').value.trim();
+      var consent = document.getElementById('consent').checked;
+      var pref = (quiz.querySelector('input[name=pref]:checked') || {}).value || 'שיחה';
+      if (!name || phone.replace(/\D/g,'').length < 9 || !consent){
+        alert(!name ? 'נשאר רק השם.' : (!consent ? 'צריך לאשר את התקנון.' : 'מספר הטלפון לא נראה שלם.'));
+        return;
+      }
+      var go = document.getElementById('go'); go.disabled = true; go.textContent = 'מכין את האבחון...';
+      var r = render(name, pref);
+      var qs = new URLSearchParams(location.search);
+      var src = qs.get('utm_source') || (qs.get('fbclid') ? 'פייסבוק' : (document.referrer ? document.referrer.split('/')[2] : 'ישיר'));
+      var summary = [txt.nights, txt.money, txt.years, txt.gives, 'ניסיונות: ' + txt.tries, pref].join(' · ');
+      fetch('https://script.google.com/macros/s/AKfycbxkZhXZCuFNKsygYS168QwSFOYM_HHExEbSooy_OYqgHG_dXKUV54xbvvMRTkWdnQm_/exec', {
+        method:'POST', mode:'no-cors', body: new URLSearchParams({ name:name, phone:phone, source: src + ' · ' + summary })
+      }).catch(function(){});
+      var payload = {
+        access_key:'9fa3fe0f-5656-4baf-a54e-8a18757fac4d',
+        subject:(pref === 'וואטסאפ' ? 'ליד חדש (וואטסאפ): ' : 'ליד חדש, להתקשר עכשיו: ') + name,
+        from_name:'אבא חי · אבחון הערב',
+        name:name, phone:phone, 'איך לחזור':pref,
+        'ערבים בשבוע':txt.nights, 'כסף בחודש':txt.money, 'שנים':txt.years, 'מה נותן':txt.gives, 'ניסיונות':txt.tries,
+        'סוג':r.type, 'סכום':r.money + ' ₪', 'ערבים':r.nights, 'מקור':src
+      };
+      fetch('https://api.web3forms.com/submit', { method:'POST', headers:{ 'Content-Type':'application/json', 'Accept':'application/json' }, body: JSON.stringify(payload) })
+        .then(function(res){ return res.json(); })
+        .then(function(d){ if (!d.success) throw 0; })
+        .catch(function(){ /* result still shown; Sheet copy was sent */ });
+      if (typeof fbq === 'function') fbq('track', 'Lead');
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('sample').style.display = 'none';
+      document.getElementById('result').classList.add('on');
+      document.querySelector('.why').style.display = 'none';
+      window.scrollTo({ top: 0 });
+    });
+  })();
+  </script>
+</body>
+</html>

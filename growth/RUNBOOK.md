@@ -51,6 +51,14 @@ at the lowest sustainable cost per lead. Later goal: paid program sign-ups (deci
    verify with a live read-back.
 8. Append to LOG.md and push. Send the owner a short Hebrew summary: numbers, what changed, what's next.
 
+## Owner reminders (mention open ones in the daily summary until the owner says done)
+- [ ] Follow-up after the quiz: send the diagnosis result to the lead by WhatsApp and email.
+      Plan: optional email field on the RESULT screen (after the Lead fires, so it doesn't hurt conversion),
+      email sent automatically from the existing Google Apps Script (MailApp). Owner must edit the Apps Script.
+- [ ] Payment page after the quiz: 250 ILS recorded course (self-serve) on the result screen as the
+      "prefer to do it alone" option; higher tiers (as on index.html) presented on the call / on a separate page.
+      Needs: payment provider + payment links from the owner. Price decisions are the owner's.
+
 ## Idea backlog (in rough priority order)
 - index.html: move the form to the top, short version for ad traffic, fix visible meta-viewport text
 - Ad angles: cost of the evening (money/time), morning-after with the kids, "the reward", privacy

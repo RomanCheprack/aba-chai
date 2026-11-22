@@ -10,6 +10,14 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 - Diagnosis: the funnel breaks on the page. Ad promised a free 3-recording challenge; page leads with a
   paid 30-day program, ~1,800 words before the form, phone required.
 
+## PageSense baseline for index.html (2026-11-17 to 2026-11-22)
+- Page is 11,650px tall, average screen 722px. Scroll retention: 75% of visits reach 900px, 50% reach 8,550px,
+  25% reach 10,450px (the form zone). Biggest drop: 700-750px (end of first screen), 7.4% lost.
+- Clicks: 116 visitors, 23 clicks total (0.2 per visit), 11% engaged. Form: #name 2 clicks, #phone 2, submit 1.
+- 67 recordings, almost all mobile inside the Facebook in-app browser. Median session 27s; 46% under 20s.
+- Reading: people who stay do read a lot, but only ~1 in 4 gets to the form and almost nobody starts it.
+  The ask (phone for a paid-looking program) is where it breaks, not attention.
+
 ## Change 2026-11-22: targeting
 - Ad set age set to hard 35-50, Advantage+ Audience off (owner request). Men, Israel. Budget 50 ILS/day.
 

@@ -16,6 +16,10 @@ at the lowest sustainable cost per lead. Later goal: paid program sign-ups (deci
 - Landing pages (GitHub Pages, repo romancheprack/aba-chai, branch main, deploys on push):
   - index.html: long page, 30-day program + free challenge (baseline)
   - v2.html: 6-question quiz "evening diagnosis", form at the end of the quiz
+- Zoho PageSense (US data center): portal domain_name "abahai", project link_name "my-project".
+  Heatmap/scrollmap for index.html: experiment link_name "--2". Heatmap for v2.html: "-v2-".
+  Session recordings (whole site): experiment link_name "-". Owner's own visits come from Kefar Hamaccabi
+  (Chrome, multi-page sessions): exclude them when judging behaviour.
 - Leads land in a Google Sheet (Apps Script) and web3forms email. The owner can see them; the loop cannot.
 
 ## Hard rules (never break)

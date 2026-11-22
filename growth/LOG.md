@@ -21,7 +21,7 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 ## Change 2026-11-22: targeting
 - Ad set age set to hard 35-50, Advantage+ Audience off (owner request). Men, Israel. Budget 50 ILS/day.
 
-## Experiment 1 (start: when the owner approves launch): v2 quiz funnel
+## Experiment 1 (started 2026-11-22 ~12:20 Israel time, owner approved): v2 quiz funnel
 - New ad "dad-35-50-v2-quiz" (ad 120251760058210305, creative 1356894669776587) -> v2.html.
   Copy matches the quiz: "what does tonight's joint really cost you? 60-second diagnosis, free, discreet".
 - Old ads paused: 120251681110080305, 120251697925420305.
@@ -29,3 +29,7 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
   LPV -> lead rate rises from ~1.7% to 5%+.
 - Judge at: 100+ LPV on v2 (about 8-10 days at 50 ILS/day). Metric: leads / LPV and cost per lead.
 - Note: this is a sequential test against the baseline, not a split test (budget too small to split).
+
+- 2026-11-22: published and activated by the loop with owner approval. Ad set ACTIVE at 50 ILS/day,
+  hard age 35-50 verified live, Advantage+ Audience off. New ad in Meta review at launch.
+  The loop may keep this ad set running; it was activated with the owner's OK.

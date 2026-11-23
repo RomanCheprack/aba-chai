@@ -60,3 +60,6 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 
 ## Change 2026-11-23: v2 result-screen stats redesign (owner request)
 - Money and nights shown as cards (money card dark, amber number, plus a yearly figure). After the Lead fires, so no effect on experiment 1.
+
+## Change 2026-11-23: v2 result-screen video replaced (owner request)
+- "How I record myself" video now https://youtu.be/WlKdvKthdZU (was _6IBpACopZ0). After the Lead, no effect on experiment 1.

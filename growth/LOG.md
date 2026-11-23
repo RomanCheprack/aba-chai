@@ -33,3 +33,20 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 - 2026-11-22: published and activated by the loop with owner approval. Ad set ACTIVE at 50 ILS/day,
   hard age 35-50 verified live, Advantage+ Audience off. New ad in Meta review at launch.
   The loop may keep this ad set running; it was activated with the owner's OK.
+
+## Status 2026-11-23 (day 2 of experiment 1) - no change
+- v2 ad since launch (11-22 to 11-23 partial): spend 59.96 ILS, 1,199 impressions, 55 link clicks, 48 LPV,
+  4 leads (cost per lead 15.0 ILS, lead/LPV 8.3%). Outbound CTR ~4-6.6%. LPV/click 87%.
+  Leads may include owner test submissions on launch day; the owner can check against the Sheet.
+- Placements: FB feed 25 LPV / 2 leads, FB Reels 17 LPV / 1 lead, IG feed 1 / 1, IG Reels+Stories 5 / 0.
+  Reels is not eating budget without leads this time; no placement change.
+- Delivery ACTIVE, ad ACTIVE (approved), budget 50 ILS/day, age 35-50 + Advantage+ Audience off verified live.
+  (Age breakdown shows small 25-34 / 55-64 spend on 11-22: that is the old ads before the targeting change.)
+- PageSense v2 heatmap (11-22 to 11-23): 51 visitors, 200 clicks (3.5/visit vs 0.2 on index.html),
+  47% engaged. Quiz options take most clicks; #go 10, #name 5, #phone 4, #consent 4, #r-call 8.
+  Scroll: 81% reach 950px, 50% reach 1,550px, page max 2,150px. No broken step visible.
+- Meta trend/benchmark tools returned no data (too new).
+- Page check from the cloud not possible (github.io blocked by the sandbox proxy); LPVs and leads are
+  coming in, so the page is up.
+- Decision: 48 of 100 LPV needed, day 2 of 7 -> keep running, change nothing. Early read is positive
+  (8.3% vs 1.7% baseline). Next judge ~2026-11-29.

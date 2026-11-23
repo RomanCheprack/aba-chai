@@ -50,3 +50,10 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
   coming in, so the page is up.
 - Decision: 48 of 100 LPV needed, day 2 of 7 -> keep running, change nothing. Early read is positive
   (8.3% vs 1.7% baseline). Next judge ~2026-11-29.
+
+## Change 2026-11-23: v2 copy accuracy fix (owner request), during experiment 1
+- v2.html promised the call would "build you a plan for the evening, free". The owner does not give a plan for free.
+  Reworded 4 places (hero sub, objection answer, 2 result-screen call messages) to: a free 15-minute call about
+  your evening, no obligation, you leave with one first step for tonight.
+- Only the hero sub line is seen before the lead; treat leads/LPV from 2026-11-23 midday on as slightly
+  different copy when judging experiment 1. Not a reason to restart the test.

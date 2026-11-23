@@ -57,3 +57,6 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
   your evening, no obligation, you leave with one first step for tonight.
 - Only the hero sub line is seen before the lead; treat leads/LPV from 2026-11-23 midday on as slightly
   different copy when judging experiment 1. Not a reason to restart the test.
+
+## Change 2026-11-23: v2 result-screen stats redesign (owner request)
+- Money and nights shown as cards (money card dark, amber number, plus a yearly figure). After the Lead fires, so no effect on experiment 1.

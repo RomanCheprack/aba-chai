@@ -44,9 +44,23 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .wrap{ max-width:1040px; margin:0 auto; padding:0 20px; }
   .num{ font-family:'Oswald', var(--body); font-weight:600; letter-spacing:-.5px; unicode-bidi:isolate; direction:ltr; }
   .ltr{ unicode-bidi:isolate; direction:ltr; white-space:nowrap; }
-  #result .big div{ border-top:2px solid var(--amber); }
-  #result .big strong{ color:var(--ink); }
-  #result .big span{ color:var(--ink-2); }
+  .stats{ display:grid; grid-template-columns:1.25fr 1fr; gap:10px; margin-top:16px; }
+  .stat{ background:#fff; border:1.5px solid var(--rule); border-radius:8px; padding:14px 14px 12px; display:flex; flex-direction:column; gap:2px; }
+  .stat .k{ font-size:14px; color:var(--ink-2); line-height:1.35; }
+  .stat .v{ display:flex; align-items:baseline; gap:6px; justify-content:flex-start; }
+  .stat .v strong{ font-size:clamp(34px, 9vw, 46px); line-height:1.05; color:var(--ink); }
+  .stat .v small{ font-size:22px; font-weight:700; color:var(--ink-2); }
+  .stat .per{ font-size:13.5px; color:var(--ink-2); line-height:1.35; }
+  .stat.money{ background:var(--night); border-color:var(--night); }
+  .stat.money .k, .stat.money .per{ color:#a9b0c4; }
+  .stat.money .v strong{ color:#ffc35a; }
+  .stat.money .v small{ color:#ffc35a; }
+  .stat.money .per b{ color:#fff; }
+  @media (max-width:520px){
+    .stats{ grid-template-columns:1fr; }
+    .stat:not(.money){ flex-direction:row; align-items:baseline; flex-wrap:wrap; column-gap:8px; padding:10px 14px; }
+    .stat:not(.money) .v strong{ font-size:30px; }
+  }
   a{ color:inherit; }
   :focus-visible{ outline:3px solid var(--amber); outline-offset:3px; }
   button{ font-family:inherit; }
@@ -227,9 +241,17 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       <div id="result" aria-live="polite">
         <p class="callout" id="r-hello"></p>
         <h2 class="r-head" id="r-type"></h2>
-        <div class="big" style="margin-top:14px">
-          <div><strong class="num" id="r-money"></strong><span id="r-money-l"></span></div>
-          <div><strong class="num" id="r-nights"></strong><span id="r-nights-l"></span></div>
+        <div class="stats">
+          <div class="stat money">
+            <span class="k" id="r-money-l"></span>
+            <div class="v"><strong class="num" id="r-money"></strong><small>₪</small></div>
+            <span class="per" id="r-year"></span>
+          </div>
+          <div class="stat">
+            <span class="k" id="r-nights-l"></span>
+            <div class="v"><strong class="num" id="r-nights"></strong></div>
+            <span class="per">ערבים שהלכו לג'וינט</span>
+          </div>
         </div>
         <div class="r-block">
           <h3>למה זה לא החזיק עד היום</h3>
@@ -336,10 +358,11 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
       var tp = TYPES[ans.gives] || TYPES.reward;
       document.getElementById('r-hello').textContent = name + ', זה האבחון שלך';
       document.getElementById('r-type').textContent = tp[0];
-      document.getElementById('r-money').textContent = fmt(round(mo * 12 * y, 1000)) + ' ₪';
-      document.getElementById('r-money-l').textContent = 'יצאו על וויד ב-' + y + ' שנים, בערך';
+      document.getElementById('r-money').textContent = fmt(round(mo * 12 * y, 1000));
+      document.getElementById('r-year').innerHTML = 'וממשיך לצאת: <b><span class="num">' + fmt(round(mo * 12, 100)) + '</span> ₪</b> בכל שנה';
+      document.getElementById('r-money-l').textContent = 'יצאו על וויד ב-' + y + ' שנים';
       document.getElementById('r-nights').textContent = fmt(round(n * 52 * y, 10));
-      document.getElementById('r-nights-l').textContent = 'ערבים עם ג\'וינט';
+      document.getElementById('r-nights-l').textContent = 'ב-' + y + ' שנים';
       var why = tp[1];
       if (+ans.tries >= 3) why += ' וכמה שיותר ניסיונות נשברו, ככה גדל הסיפור שאתה פשוט חלש. הוא לא נכון.';
       document.getElementById('r-why').textContent = why;

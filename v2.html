@@ -34,7 +34,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     --ink-2:#4f5869;
     --rule:#cfd6d2;
     --amber:#f0a63c;
-    --amber-ink:#c97a12;
+    --amber-ink:#c97a12; --amber-text:#985b0a;
     --night:#16213a;
     --display:'Karantina', 'Frank Ruhl Libre', serif;
     --body:'Frank Ruhl Libre', Georgia, serif;
@@ -46,11 +46,11 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .ltr{ unicode-bidi:isolate; direction:ltr; white-space:nowrap; }
   .stats{ display:grid; grid-template-columns:1.25fr 1fr; gap:10px; margin-top:16px; }
   .stat{ background:#fff; border:1.5px solid var(--rule); border-radius:8px; padding:14px 14px 12px; display:flex; flex-direction:column; gap:2px; }
-  .stat .k{ font-size:14px; color:var(--ink-2); line-height:1.35; }
+  .stat .k{ font-size:15px; color:var(--ink-2); line-height:1.35; }
   .stat .v{ display:flex; align-items:baseline; gap:6px; justify-content:flex-start; }
   .stat .v strong{ font-size:clamp(34px, 9vw, 46px); line-height:1.05; color:var(--ink); }
   .stat .v small{ font-size:22px; font-weight:700; color:var(--ink-2); }
-  .stat .per{ font-size:13.5px; color:var(--ink-2); line-height:1.35; }
+  .stat .per{ font-size:14.5px; color:var(--ink-2); line-height:1.35; }
   .stat.money{ background:var(--night); border-color:var(--night); }
   .stat.money .k, .stat.money .per{ color:#a9b0c4; }
   .stat.money .v strong{ color:#ffc35a; }
@@ -73,7 +73,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .hero{ padding:6px 0 48px; }
   .hero-grid{ display:grid; gap:22px; }
   @media (min-width:900px){ .hero-grid{ grid-template-columns:1.05fr .95fr; gap:48px; align-items:start; } }
-  .callout{ margin:0 0 6px; font-size:16px; font-weight:700; color:var(--amber-ink); }
+  .callout{ margin:0 0 6px; font-size:16px; font-weight:700; color:var(--amber-text); }
   h1{ font-family:var(--display); font-weight:700; font-size:clamp(46px, 11vw, 78px); line-height:.92; margin:0 0 12px; }
   .sub{ margin:0 0 18px; font-size:17.5px; color:var(--ink-2); max-width:520px; }
 
@@ -102,7 +102,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .go{ display:block; width:100%; margin-top:12px; font-weight:700; font-size:20px; padding:15px; border:0; border-radius:6px; background:var(--amber); color:#1b1405; cursor:pointer; }
   .go:hover{ background:#f6b85c; }
   .go:disabled{ opacity:.6; cursor:wait; }
-  .fine{ font-size:13.5px; color:var(--ink-2); margin:10px 0 0; text-align:center; }
+  .fine{ font-size:14.5px; color:var(--ink-2); margin:10px 0 0; text-align:center; }
 
   /* Sample result (proof) */
   .sample{ background:var(--night); color:#eae6dc; border-radius:6px; padding:20px 20px 18px; }
@@ -126,7 +126,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .me p{ margin:0; font-size:16px; color:var(--ink-2); }
   .again{ display:inline-block; margin-top:26px; font-weight:700; font-size:18px; padding:13px 22px; border-radius:6px; background:var(--amber); color:#1b1405; text-decoration:none; }
 
-  footer{ padding:22px 0 30px; font-size:13.5px; color:var(--ink-2); }
+  footer{ padding:22px 0 30px; font-size:14.5px; color:var(--ink-2); }
   footer a{ margin-left:14px; }
 
   /* Result */
@@ -140,7 +140,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .call p{ margin:0; color:var(--ink); }
   .vid{ position:relative; width:100%; max-width:300px; aspect-ratio:9/16; border-radius:10px; overflow:hidden; background:#000; margin-top:6px; }
   .vid iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
-  .wa{ display:inline-block; margin-top:12px; font-weight:700; font-size:16px; color:var(--amber-ink); }
+  .wa{ display:inline-block; margin-top:12px; font-weight:700; font-size:16px; color:var(--amber-text); }
   @media (prefers-reduced-motion: reduce){ .progress i{ transition:none; } }
 </style>
 </head>

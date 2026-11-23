@@ -31,7 +31,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
 <style>
   :root{
     --bg:#f7f9f8; --bg-2:#eef2ef; --ink:#1a2233; --ink-2:#4f5869; --rule:#cfd6d2;
-    --amber:#f0a63c; --amber-ink:#c97a12; --night:#16213a;
+    --amber:#f0a63c; --amber-ink:#c97a12; --amber-text:#985b0a; --night:#16213a;
     --display:'Karantina', 'Frank Ruhl Libre', serif;
     --body:'Frank Ruhl Libre', Georgia, serif;
   }
@@ -48,7 +48,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .logo span{ font-family:var(--display); font-size:28px; line-height:1; }
 
   .hero{ padding:6px 0 36px; }
-  .callout{ margin:0 0 6px; font-size:16px; font-weight:700; color:var(--amber-ink); }
+  .callout{ margin:0 0 6px; font-size:16px; font-weight:700; color:var(--amber-text); }
   h1{ font-family:var(--display); font-weight:700; font-size:clamp(46px, 11vw, 78px); line-height:.92; margin:0 0 12px; }
   h1 .pre{ display:block; font-size:.55em; line-height:1.1; color:var(--amber-ink); margin-bottom:4px; }
   h2{ font-family:var(--display); font-weight:700; font-size:clamp(38px, 8vw, 54px); line-height:.95; margin:0 0 18px; }
@@ -66,7 +66,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .cta{ display:block; width:100%; margin-top:14px; font-weight:700; font-size:21px; padding:16px; border:0; border-radius:6px; background:var(--amber); color:#1b1405; text-decoration:none; cursor:pointer; }
   .cta:hover{ background:#f6b85c; }
   .cta.off{ opacity:.55; pointer-events:none; }
-  .fine{ font-size:13.5px; color:var(--ink-2); margin:10px 0 0; }
+  .fine{ font-size:14.5px; color:var(--ink-2); margin:10px 0 0; }
 
   section.band{ padding:40px 0; }
   section.alt{ background:var(--bg-2); }
@@ -74,7 +74,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .steps li{ border-right:4px solid var(--amber); padding:2px 16px 2px 0; }
   .steps h3, .obj h3{ font-family:var(--body); font-size:19px; margin:0 0 2px; }
   .steps p, .obj p{ margin:0; color:var(--ink-2); font-size:16.5px; }
-  .steps .d{ font-size:14px; color:var(--amber-ink); font-weight:700; }
+  .steps .d{ font-size:15px; color:var(--amber-text); font-weight:700; }
 
   .night{ background:var(--night); color:#eae6dc; border-radius:6px; padding:22px 20px; }
   .night h2{ color:#fff; }
@@ -92,10 +92,17 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   .me{ display:flex; gap:14px; align-items:center; margin-top:26px; }
   .me img{ width:56px; height:56px; border-radius:50%; object-fit:cover; flex:none; }
   .me p{ margin:0; font-size:16px; color:var(--ink-2); }
-  .wa{ display:inline-block; margin-top:10px; font-weight:700; color:var(--amber-ink); }
+  .wa{ display:inline-block; margin-top:10px; font-weight:700; color:var(--amber-text); }
 
-  footer{ padding:22px 0 30px; font-size:13.5px; color:var(--ink-2); }
+  footer{ padding:22px 0 90px; font-size:14.5px; color:var(--ink-2); }
   footer a{ margin-left:14px; }
+  .sticky{ position:fixed; inset-inline:0; bottom:0; z-index:10; background:#fff; border-top:1.5px solid var(--rule); padding:10px 16px calc(10px + env(safe-area-inset-bottom)); display:flex; align-items:center; gap:12px; transform:translateY(110%); transition:transform .2s ease; box-shadow:0 -4px 14px rgba(22,33,58,.08); }
+  .sticky.on{ transform:none; }
+  .sticky .p{ font-size:26px; line-height:1; white-space:nowrap; }
+  .sticky .p small{ font-family:var(--body); font-size:15px; font-weight:400; }
+  .sticky .cta{ margin:0; padding:13px; font-size:18px; flex:1; }
+  @media (prefers-reduced-motion: reduce){ .sticky{ transition:none; } }
+  @media (min-width:900px){ .sticky{ display:none; } }
 </style>
 </head>
 <body>
@@ -190,6 +197,11 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
     </div>
   </footer>
 
+<div class="sticky" id="sticky" aria-hidden="true">
+  <div class="p num">250 <small>₪</small></div>
+  <a class="cta" id="pay3" href="#" target="_blank" rel="noopener" tabindex="-1">להתחיל הערב</a>
+</div>
+
 <script>
 (function(){
   // ---- Fill these two and the page is live ----
@@ -199,7 +211,7 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   // ---------------------------------------------
 
   var qs = location.search;
-  ['pay','pay2'].forEach(function(id){
+  ['pay','pay2','pay3'].forEach(function(id){
     var a = document.getElementById(id);
     if (!PAY_URL){ a.classList.add('off'); a.textContent = 'ההרשמה נפתחת בקרוב'; a.removeAttribute('href'); return; }
     a.href = PAY_URL;
@@ -207,6 +219,20 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
   });
   if (VSL_URL){
     document.getElementById('vsl').innerHTML = '<iframe src="' + VSL_URL + '" title="הסרטון של רומן" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+  }
+  // Sticky buy bar on mobile: only when payment is live, and only while neither buy box is on screen
+  var bar = document.getElementById('sticky');
+  if (PAY_URL && 'IntersectionObserver' in window){
+    var seen = {}, passedTop = false;
+    var boxes = document.querySelectorAll('.buy');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){ seen[e.target.id || 'b2'] = e.isIntersecting; if (e.target.id === 'buy' && !e.isIntersecting && e.boundingClientRect.top < 0) passedTop = true; if (e.target.id === 'buy' && e.isIntersecting) passedTop = false; });
+      var anyVisible = Object.keys(seen).some(function(k){ return seen[k]; });
+      var on = passedTop && !anyVisible;
+      bar.classList.toggle('on', on); bar.setAttribute('aria-hidden', on ? 'false' : 'true');
+      document.getElementById('pay3').tabIndex = on ? 0 : -1;
+    });
+    boxes.forEach(function(b){ io.observe(b); });
   }
   document.getElementById('wa').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent('היי רומן, הגעתי מדף הקורס. אני מעדיף לעשות את זה עם ליווי.');
 })();

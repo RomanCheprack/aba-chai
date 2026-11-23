@@ -63,3 +63,7 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 
 ## Change 2026-11-23: v2 result-screen video replaced (owner request)
 - "How I record myself" video now https://youtu.be/WlKdvKthdZU (was _6IBpACopZ0). After the Lead, no effect on experiment 1.
+
+## Change 2026-11-23: accessibility fixes (owner approved)
+- Small amber text darkened to #985b0a (contrast 4.8-5.2:1, was 3.0-3.2) on v2 and course.html; this includes the v2 hero callout seen before the lead (color only).
+- Small text sizes 13.5px -> 14.5-15px. course.html: sticky mobile buy bar, shown only when PAY_URL is set and neither buy box is on screen.

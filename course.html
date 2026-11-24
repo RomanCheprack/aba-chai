@@ -128,9 +128,10 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
 
       <div class="buy" id="buy">
         <div class="price num">250 <small>₪</small></div>
-        <p>תשלום אחד. השיעור הראשון נפתח לך מיד אחרי ההרשמה.</p>
+        <p>תשלום אחד. השיעור הראשון נפתח לך מיד אחרי ההרשמה.<br>בדף התשלום ובפירוט האשראי יופיע השם "ריידיל יזמות".</p>
         <a class="cta" id="pay" href="#" target="_blank" rel="noopener">אני רוצה להתחיל הערב</a>
         <p class="fine">פחות מחודש אחד של וויד.</p>
+        <p class="fine" id="payerr" hidden role="alert">משהו השתבש בפתיחת דף התשלום. נסה שוב בעוד דקה, או <a href="https://wa.me/972525521657">כתוב לי בוואטסאפ</a>.</p>
       </div>
     </div>
   </section>
@@ -229,18 +230,34 @@ src="https://www.facebook.com/tr?id=1286446833546477&ev=PageView&noscript=1"
 
 <script>
 (function(){
-  // ---- Fill these two and the page is live ----
-  var PAY_URL = '';   // payment link for the 250 ILS course
-  var VSL_URL = '';   // YouTube embed URL, e.g. https://www.youtube.com/embed/XXXX
+  // ---- Fill these and the page is live ----
+  var PAY_ENDPOINT = ''; // Google Apps Script web app URL (aba-chai-payments.gs)
+  var VSL_URL = '';      // YouTube embed URL, e.g. https://www.youtube.com/embed/XXXX
   var PHONE = '972525521657';
-  // ---------------------------------------------
+  // -------------------------------------------
+  var PAY_URL = PAY_ENDPOINT; // used below to decide whether payment is live
 
-  var qs = location.search;
+  var busy = false;
+  function go(e){
+    e.preventDefault();
+    if (busy) return; busy = true;
+    var btns = ['pay','pay2','pay3'].map(function(id){ return document.getElementById(id); });
+    btns.forEach(function(b){ b.dataset.t = b.textContent; b.textContent = 'מעביר לדף תשלום מאובטח…'; });
+    if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {value:250, currency:'ILS'});
+    fetch(PAY_ENDPOINT + '?mode=sign').then(function(r){ return r.json(); }).then(function(d){
+      if (d && d.ok && d.url && d.url.indexOf('https://pay.hyp.co.il/') === 0){ location.href = d.url; return; }
+      throw new Error('sign');
+    }).catch(function(){
+      busy = false;
+      btns.forEach(function(b){ b.textContent = b.dataset.t; });
+      var n = document.getElementById('payerr'); n.hidden = false;
+    });
+  }
   ['pay','pay2','pay3'].forEach(function(id){
     var a = document.getElementById(id);
-    if (!PAY_URL){ a.classList.add('off'); a.textContent = 'ההרשמה נפתחת בקרוב'; a.removeAttribute('href'); return; }
-    a.href = PAY_URL;
-    a.addEventListener('click', function(){ if (typeof fbq === 'function') fbq('track', 'InitiateCheckout', {value:250, currency:'ILS'}); });
+    if (!PAY_ENDPOINT){ a.classList.add('off'); a.textContent = 'ההרשמה נפתחת בקרוב'; a.removeAttribute('href'); return; }
+    a.href = '#'; a.removeAttribute('target');
+    a.addEventListener('click', go);
   });
   if (VSL_URL){
     document.getElementById('vsl').innerHTML = '<iframe src="' + VSL_URL + '" title="הסרטון של רומן" allow="encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>';

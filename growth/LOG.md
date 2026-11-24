@@ -67,3 +67,17 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 ## Change 2026-11-23: accessibility fixes (owner approved)
 - Small amber text darkened to #985b0a (contrast 4.8-5.2:1, was 3.0-3.2) on v2 and course.html; this includes the v2 hero callout seen before the lead (color only).
 - Small text sizes 13.5px -> 14.5-15px. course.html: sticky mobile buy bar, shown only when PAY_URL is set and neither buy box is on screen.
+
+## Status 2026-11-24 (day 3 of experiment 1) - ad PAUSED by owner, no change
+- The v2 ad (120251760058210305) was paused manually by the owner in Ads Manager on 2026-11-23 ~22:40 (account time).
+  Not paused by the loop -> per rule 7 the loop does not reactivate it. Ad set ACTIVE, but delivery "all ads off".
+  No spend on 11-24. Waiting for the owner's OK (or reason) before anything resumes.
+- v2 totals 11-22 to 11-23: spend 98.97 ILS, 2,044 impressions, 78 link clicks, 71 LPV, 6 leads
+  (cost per lead 16.50 ILS, lead/LPV 8.5% vs 1.7% baseline). Outbound CTR 3.7-4.0%. LPV/click 91%.
+- Placements: FB feed 61.11 ILS / 34 LPV / 2 leads, FB Reels 18.19 / 27 / 3, IG feed 7.89 / 2 / 1,
+  IG Reels 5.45 / 5 / 0, IG Stories 5.10 / 3 / 0, FB Stories 0.94, Threads 0.29. No placement problem.
+- PageSense v2 (11-22 to 11-24): 73 visitors, 258 clicks (3.0/visit), 45% engaged. #go 16, #name 7, #phone 6,
+  #consent 7, #r-call 8. Scroll: 78% reach 950px, 51% reach 1,400px, 25% reach 1,950px; biggest drop 2,000-2,050px (8.5%).
+  No broken step visible. Meta trend/benchmark tools: no data.
+- Decision: no change. 71 of 100 LPV, day 2 of 7 of delivery. The test clock is stopped while the ad is paused.
+  If the owner resumes it, keep judging experiment 1 at 100+ LPV and 7 days of delivery.

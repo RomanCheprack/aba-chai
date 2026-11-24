@@ -86,7 +86,7 @@ fbq('track', 'PageView');
 
   var qs = location.search.replace(/^\?/, '');
   var id = (qs.match(/(?:^|&)Id=([^&]*)/) || [])[1] || '';
-  wa(document.getElementById('wa-fail'), 'היי רומן, שילמתי על הקורס "אבא חי לבד" אבל הדף לא נפתח לי.' + (id ? ' מספר עסקה: ' + decodeURIComponent(id) : ''));
+  wa(document.getElementById('wa-fail'), 'היי רומן, שילמתי על הקורס של אבא חי אבל הדף לא נפתח לי.' + (id ? ' מספר עסקה: ' + decodeURIComponent(id) : ''));
 
   if (!qs || !id || !PAY_ENDPOINT){ show('s-fail'); return; }
 
@@ -99,7 +99,7 @@ fbq('track', 'PageView');
       } else {
         document.getElementById('lesson').hidden = true;
       }
-      wa(document.getElementById('wa-ok'), 'היי רומן, נרשמתי לאבא חי לבד ואני רוצה לקבל את הסרטונים היומיים. מספר עסקה: ' + (d.id || decodeURIComponent(id)));
+      wa(document.getElementById('wa-ok'), 'היי רומן, נרשמתי לקורס של אבא חי ואני רוצה לקבל את הסרטונים היומיים. מספר עסקה: ' + (d.id || decodeURIComponent(id)));
       // Report the purchase once per transaction
       var key = 'ac_purchase_' + (d.id || id), sent = false;
       try { sent = localStorage.getItem(key) === '1'; } catch(e){}

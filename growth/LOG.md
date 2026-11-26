@@ -90,6 +90,6 @@ Newest at the bottom. Metrics from Meta Ads, attribution 7d click / 1d view.
 
 ## Status 2026-11-26 (experiment 1, day 2 of 7 of delivery) - ad still PAUSED by owner, no change
 - Ad 120251760058210305 still PAUSED (owner, 2026-11-23 22:40). Activity log: no changes since. No spend 11-24 to 11-26.
-- Totals unchanged: v2 since 11-22: 99.04 ILS, 79 link clicks, 71 LPV, 6 leads, ~16.5 ILS/lead.
+- Totals unchanged: v2 since 11-22: 99.04 ILS, 78 link clicks, 71 LPV, 6 leads, ~16.5 ILS/lead.
 - PageSense not re-read: no paid traffic since the pause.
 - Decision: rule 7, do not reactivate. Waiting for the owner's OK. Test clock stays at 71 of 100 LPV.
